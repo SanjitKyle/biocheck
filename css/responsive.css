@@ -211,6 +211,19 @@
   .project-card-item {
     height: 480px;
   }
+  .process-steps-row {
+    gap: 25px;
+  }
+  .process-track-line {
+    left: 14%;
+    right: 14%;
+  }
+  .process-step-title {
+    font-size: 1.3rem;
+  }
+  .process-step-desc {
+    font-size: 0.88rem;
+  }
 }
 
 /* Max Width: 768px */
@@ -327,6 +340,36 @@
     height: 480px;
     scroll-snap-align: center;
   }
+  .working-process-section {
+    padding: 70px 0 80px;
+  }
+  .process-main-title {
+    font-size: 2.1rem;
+  }
+  .process-steps-row {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .process-track-line {
+    top: 85px;
+    bottom: 85px;
+    left: 50%;
+    right: auto;
+    width: 0;
+    height: auto;
+    border-top: none;
+    border-left: 2px dashed #d5dce6;
+    transform: translateX(-50%);
+  }
+  .process-step-desc {
+    max-width: 420px;
+  }
+  .process-bg-sparkles {
+    display: none;
+  }
+  .process-bg-ripples {
+    opacity: 0.5;
+  }
 }
 
 /* Max Width: 480px */
@@ -388,5 +431,24 @@
   .btn-projects-cta {
     width: 100%;
     justify-content: center;
+  }
+  .booking-field-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .feature-box-booking {
+    padding: 28px 20px 22px;
+  }
+  .process-main-title {
+    font-size: 1.85rem;
+  }
+  .process-icon-wrap {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 22px;
+  }
+  .process-track-line {
+    top: 75px;
+    bottom: 75px;
   }
 }

@@ -464,5 +464,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 10. Quick Booking Form Interactive Handling
+  const bookingForm = document.getElementById('quickBookingForm');
+  const bookingSuccessBox = document.getElementById('bookingSuccessBox');
+  const bookingResetBtn = document.getElementById('bookingResetBtn');
+
+  if (bookingForm && bookingSuccessBox) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = bookingForm.querySelector('.booking-submit-btn');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span>Processing...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        bookingForm.style.display = 'none';
+        bookingSuccessBox.style.display = 'block';
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 700);
+    });
+
+    if (bookingResetBtn) {
+      bookingResetBtn.addEventListener('click', () => {
+        bookingForm.reset();
+        bookingSuccessBox.style.display = 'none';
+        bookingForm.style.display = 'flex';
+      });
+    }
+  }
 });
 

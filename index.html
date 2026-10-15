@@ -62,7 +62,7 @@
 
       <!-- Header Right Utilities -->
       <div class="header-right">
-        <a href="#footer" class="btn btn-primary header-quote-btn">
+        <a href="#bookingCard" class="btn btn-primary header-quote-btn">
           <span>Get a Quote</span>
           <span class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
         </a>
@@ -83,6 +83,7 @@
     <ul class="mobile-nav-list">
       <li class="mobile-nav-item"><a href="#hero">Home</a></li>
       <li class="mobile-nav-item"><a href="#why-choose">Why Choose Us</a></li>
+      <li class="mobile-nav-item"><a href="#process">How It Works</a></li>
       <li class="mobile-nav-item"><a href="#about">About Us</a></li>
       <li class="mobile-nav-item"><a href="#services">Our Services</a></li>
       <li class="mobile-nav-item"><a href="#counters">Achievements</a></li>
@@ -229,42 +230,84 @@
           </a>
         </div>
 
-        <!-- Feature 2: Center Hero Dark Card (520+ Trusted Cleaners) -->
-        <div class="feature-box feature-box-highlight feature-box-modern">
+        <!-- Feature 2: Center Hero Dark Card (Interactive Quick Booking Form) -->
+        <div class="feature-box feature-box-highlight feature-box-modern feature-box-booking" id="bookingCard">
           <div class="feature-card-glow-gold"></div>
+          
           <div class="feature-box-top">
-            <span class="feature-pill feature-pill-gold"><i class="fa-solid fa-shield-halved"></i> Top Rated</span>
+            <span class="feature-pill feature-pill-gold"><i class="fa-solid fa-calendar-check"></i> Book Now</span>
             <div class="feature-icon-box feature-icon-gold">
-              <i class="fa-solid fa-award"></i>
+              <i class="fa-solid fa-bolt"></i>
             </div>
           </div>
-          <div class="counter-wrap">
-            <div class="feature-counter" data-target="520" data-suffix="+">520+</div>
-            <span class="counter-label">Active Cleaning Pros</span>
+
+          <div class="booking-header-text">
+            <h3 class="booking-card-title">Book A Cleaning Pro</h3>
+            <p class="booking-card-subtitle">Instant online scheduling & 100% satisfaction guarantee.</p>
           </div>
-          <p class="feature-desc">Professional and background-checked staff ready to help you with 100% satisfaction guarantee.</p>
-          <div class="feature-trust-group">
-            <div class="avatar-group">
-              <img src="assets/images/testimonial-img-01.jpg" alt="Cleaner">
-              <img src="assets/images/testimonial-img-02.jpg" alt="Cleaner">
-              <img src="assets/images/testimonial-img-03.jpg" alt="Cleaner">
-              <div class="avatar-extra">+500</div>
+
+          <form class="quick-booking-form" id="quickBookingForm">
+            <!-- Service Selection -->
+            <div class="booking-field-group">
+              <span class="booking-field-icon"><i class="fa-solid fa-broom"></i></span>
+              <select class="booking-field-select" required name="service" aria-label="Select Cleaning Service">
+                <option value="" disabled selected>Select Cleaning Service</option>
+                <option value="commercial">Commercial Office Cleaning</option>
+                <option value="residential">Residential Home Cleaning</option>
+                <option value="carpet">Carpet & Floor Deep Clean</option>
+                <option value="window">Window Glass Cleaning</option>
+                <option value="deep">Deep Sanitization Clean</option>
+              </select>
             </div>
-            <div class="rating-stars-small">
-              <div class="stars-gold">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+
+            <!-- Two-column: Name & Phone -->
+            <div class="booking-field-row">
+              <div class="booking-field-group">
+                <span class="booking-field-icon"><i class="fa-solid fa-user"></i></span>
+                <input type="text" class="booking-field-input" placeholder="Your Name" required name="name" aria-label="Your Name">
               </div>
-              <span>4.9/5 Rating</span>
+              <div class="booking-field-group">
+                <span class="booking-field-icon"><i class="fa-solid fa-phone"></i></span>
+                <input type="tel" class="booking-field-input" placeholder="Phone Number" required name="phone" aria-label="Phone Number">
+              </div>
             </div>
+
+            <!-- Two-column: Date & Time -->
+            <div class="booking-field-row">
+              <div class="booking-field-group">
+                <span class="booking-field-icon"><i class="fa-solid fa-calendar-day"></i></span>
+                <input type="date" class="booking-field-input booking-field-date" required name="date" aria-label="Booking Date">
+              </div>
+              <div class="booking-field-group">
+                <span class="booking-field-icon"><i class="fa-solid fa-clock"></i></span>
+                <select class="booking-field-select" required name="time" aria-label="Preferred Time">
+                  <option value="" disabled selected>Preferred Time</option>
+                  <option value="morning">Morning (8am - 12pm)</option>
+                  <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                  <option value="evening">Evening (4pm - 8pm)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="booking-submit-btn">
+              <span>Book Appointment Now</span>
+              <span class="submit-circle"><i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+          </form>
+
+          <!-- Success Feedback Card -->
+          <div class="booking-success-box" id="bookingSuccessBox" style="display: none;">
+            <div class="booking-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h4>Booking Request Sent!</h4>
+            <p>Thank you! Our dispatcher will call you shortly to confirm your slot.</p>
+            <button type="button" class="booking-reset-btn" id="bookingResetBtn">Book Another Service</button>
           </div>
-          <a href="#why-choose" class="feature-action-btn feature-action-btn-gold">
-            <span>Know More</span>
-            <span class="action-circle"><i class="fa-solid fa-arrow-right"></i></span>
-          </a>
+
+          <div class="booking-micro-trust">
+            <span><i class="fa-solid fa-shield-halved"></i> 100% Guaranteed</span>
+            <span><i class="fa-solid fa-bolt"></i> Fast 15-Min Callback</span>
+          </div>
         </div>
 
         <!-- Feature 3: Fast Response / Easy Booking -->
@@ -282,7 +325,7 @@
             <span class="perk-badge"><i class="fa-solid fa-check"></i> Instant Confirmation</span>
             <span class="perk-badge"><i class="fa-solid fa-check"></i> 24/7 Support</span>
           </div>
-          <a href="#footer" class="feature-action-btn">
+          <a href="#bookingCard" class="feature-action-btn">
             <span>Book Now</span>
             <span class="action-circle"><i class="fa-solid fa-arrow-right"></i></span>
           </a>
@@ -387,6 +430,129 @@
             <span>Know More</span>
             <span class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       OUR WORKING PROCESS (HOW IT WORKS)
+       ========================================================================== -->
+  <section id="process" class="working-process-section">
+    <!-- Ambient Background Flourishes -->
+    <div class="process-bg-sparkles" aria-hidden="true">
+      <svg viewBox="0 0 160 160" class="sparkle-svg-1">
+        <path d="M80 0 C80 44 44 80 0 80 C44 80 80 116 80 160 C80 116 116 80 160 80 C116 80 80 44 80 0 Z" fill="rgba(0, 24, 55, 0.035)"/>
+      </svg>
+      <svg viewBox="0 0 100 100" class="sparkle-svg-2">
+        <path d="M50 0 C50 28 28 50 0 50 C28 50 50 72 50 100 C50 72 72 50 100 50 C72 50 50 28 50 0 Z" fill="rgba(251, 163, 17, 0.12)"/>
+      </svg>
+      <div class="process-bg-ring ring-1"></div>
+      <div class="process-bg-ring ring-2"></div>
+      <div class="process-bg-dot dot-1"></div>
+    </div>
+
+    <div class="process-bg-ripples" aria-hidden="true">
+      <svg viewBox="0 0 300 300" class="ripples-svg">
+        <circle cx="300" cy="300" r="80" stroke="rgba(0, 24, 55, 0.04)" stroke-width="1.5" fill="none"/>
+        <circle cx="300" cy="300" r="140" stroke="rgba(0, 24, 55, 0.04)" stroke-width="1.5" fill="none"/>
+        <circle cx="300" cy="300" r="200" stroke="rgba(0, 24, 55, 0.03)" stroke-width="1.5" fill="none"/>
+        <circle cx="300" cy="300" r="260" stroke="rgba(0, 24, 55, 0.02)" stroke-width="1.5" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <!-- Section Header -->
+      <div class="process-header text-center">
+        <div class="process-sub-badge cc-fade-reveal">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>HOW IT WORKS</span>
+        </div>
+        <h2 class="process-main-title main-title">Our Working Process</h2>
+      </div>
+
+      <!-- Process 3-Step Flow -->
+      <div class="process-steps-wrapper">
+        <!-- Connecting Dashed Track -->
+        <div class="process-track-line" aria-hidden="true"></div>
+
+        <div class="process-steps-row">
+          <!-- Step 1 -->
+          <div class="process-step-item">
+            <div class="process-icon-wrap">
+              <div class="process-icon-halo"></div>
+              <div class="process-icon-dashed"></div>
+              <div class="process-icon-inner">
+                <!-- Step 1 SVG Icon: Person with Checklist/Plan -->
+                <svg viewBox="0 0 64 64" class="process-step-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="18" y="10" width="34" height="46" rx="4" stroke-width="2.2"/>
+                  <path d="M26 10V7a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v3" stroke-width="2.2"/>
+                  <circle cx="35" cy="7" r="1.5" fill="currentColor"/>
+                  <path d="M34 22h12" stroke-width="2"/>
+                  <path d="M34 32h12" stroke-width="2"/>
+                  <path d="M34 42h12" stroke-width="2"/>
+                  <path d="M27 22l2 2 4-4" stroke-width="2"/>
+                  <circle cx="16" cy="36" r="5" stroke-width="2.2" fill="#ffffff"/>
+                  <path d="M8 52c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke-width="2.2" fill="#ffffff"/>
+                </svg>
+              </div>
+              <span class="step-number-badge">01</span>
+            </div>
+            <h3 class="process-step-title">Make A Plan</h3>
+            <p class="process-step-desc">Choose from our specialized cleaning services or customize a tailored plan suited to your space and requirements.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step-item">
+            <div class="process-icon-wrap">
+              <div class="process-icon-halo"></div>
+              <div class="process-icon-dashed"></div>
+              <div class="process-icon-inner">
+                <!-- Step 2 SVG Icon: Calendar Date / Schedule -->
+                <svg viewBox="0 0 64 64" class="process-step-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="12" y="14" width="40" height="40" rx="5" stroke-width="2.2"/>
+                  <path d="M20 8v10M32 8v10M44 8v10" stroke-width="2.5"/>
+                  <line x1="12" y1="24" x2="52" y2="24" stroke-width="2"/>
+                  <circle cx="21" cy="32" r="2" fill="currentColor"/>
+                  <circle cx="32" cy="32" r="2" fill="currentColor"/>
+                  <circle cx="43" cy="32" r="2" fill="currentColor"/>
+                  <circle cx="21" cy="40" r="2" fill="currentColor"/>
+                  <circle cx="32" cy="40" r="2" fill="currentColor"/>
+                  <circle cx="43" cy="40" r="2" fill="currentColor"/>
+                  <circle cx="21" cy="47" r="2" fill="currentColor"/>
+                  <circle cx="32" cy="47" r="2" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="step-number-badge">02</span>
+            </div>
+            <h3 class="process-step-title">Set A Date</h3>
+            <p class="process-step-desc">Select your preferred date and time slot with instant scheduling, transparent pricing, and automated reminders.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step-item">
+            <div class="process-icon-wrap">
+              <div class="process-icon-halo"></div>
+              <div class="process-icon-dashed"></div>
+              <div class="process-icon-inner">
+                <!-- Step 3 SVG Icon: Cleaning Tools & Sparkles -->
+                <svg viewBox="0 0 64 64" class="process-step-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="10" x2="22" y2="46" stroke-width="2.4"/>
+                  <path d="M14 46h16a2 2 0 0 1 2 2v2H12v-2a2 2 0 0 1 2-2z" stroke-width="2"/>
+                  <line x1="12" y1="50" x2="32" y2="50" stroke-width="2.5"/>
+                  <path d="M34 34h18l-2 18H36l-2-18z" stroke-width="2.2"/>
+                  <path d="M32 34c0-5 5-9 11-9s11 4 11 9" stroke-width="2"/>
+                  <path d="M43 25v-7h-4v7" stroke-width="2"/>
+                  <line x1="39" y1="21" x2="34" y2="23" stroke-width="2"/>
+                  <path d="M12 24l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" fill="currentColor" stroke="none"/>
+                  <path d="M50 14l0.8 2 2 0.8-2 0.8-0.8 2-0.8-2-2-0.8 2-0.8 0.8-2z" fill="currentColor" stroke="none"/>
+                </svg>
+              </div>
+              <span class="step-number-badge">03</span>
+            </div>
+            <h3 class="process-step-title">Start Cleaning</h3>
+            <p class="process-step-desc">Our background-checked, certified professionals arrive fully equipped to deliver an immaculate, sparkling finish.</p>
+          </div>
         </div>
       </div>
     </div>
