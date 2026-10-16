@@ -70,6 +70,77 @@
   padding-left: 8px;
 }
 
+.mobile-sub-toggle {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-sub-toggle i {
+  font-size: 0.8rem;
+  transition: transform 0.25s ease;
+}
+
+.mobile-sub-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 0 6px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  margin-top: 6px;
+}
+
+.mobile-sub-column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mobile-sub-header {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.mobile-sub-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobile-sub-items li a {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 5px 8px;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobile-sub-items li a i {
+  font-size: 0.65rem;
+  color: var(--primary);
+}
+
+.mobile-sub-items li a:hover {
+  color: #ffffff;
+  padding-left: 12px;
+}
+
 .mobile-drawer-footer {
   margin-top: auto;
   padding-top: 25px;
@@ -123,9 +194,6 @@
   .slide-title {
     font-size: 3rem;
   }
-  .why-choose-grid {
-    gap: 40px;
-  }
   .who-grid {
     gap: 40px;
   }
@@ -173,17 +241,49 @@
   .feature-box-modern {
     padding: 32px 26px 26px;
   }
-  .why-choose-grid {
+  .why-choose-tabbed-section {
+    padding: 80px 0 90px;
+  }
+  .why-main-title {
+    font-size: 2.2rem;
+  }
+  .why-tabs-nav {
+    gap: 12px;
+  }
+  .why-tab-btn {
+    padding: 16px 18px;
+    gap: 12px;
+  }
+  .why-tab-btn .tab-btn-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.15rem;
+  }
+  .why-tab-btn .tab-btn-text {
+    font-size: 1.05rem;
+  }
+  .why-tab-btn .tab-btn-sub {
+    font-size: 0.78rem;
+  }
+  .why-panel-grid {
     grid-template-columns: 1fr;
   }
-  .why-image-wrapper img {
-    height: 420px;
+  .why-panel-media {
+    height: 350px;
   }
-  .who-grid {
+  .why-panel-body {
+    padding: 40px 32px;
+  }
+  .about-agency-grid {
     grid-template-columns: 1fr;
+    gap: 55px;
   }
-  .call-card {
-    right: 20px;
+  .about-collage-container {
+    max-width: 580px;
+    margin: 0 auto;
+  }
+  .about-agency-title {
+    font-size: 2.25rem;
   }
   .split-reference-grid {
     grid-template-columns: 1fr;
@@ -269,11 +369,67 @@
   .counter-item::after {
     display: none;
   }
-  .why-features-grid {
-    grid-template-columns: 1fr;
+  .why-choose-tabbed-section {
+    padding: 70px 0 80px;
   }
-  .who-tabs-cards {
+  .why-main-title {
+    font-size: 1.85rem;
+    margin-bottom: 28px;
+  }
+  .why-tabs-nav {
     grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .why-tab-btn {
+    width: 100%;
+    border-radius: 12px;
+    padding: 14px 18px;
+    gap: 14px;
+  }
+  .why-tab-btn .tab-btn-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.05rem;
+  }
+  .why-tab-btn .tab-btn-text {
+    font-size: 1.05rem;
+  }
+  .why-tab-panels-wrapper {
+    border-radius: 16px;
+  }
+  .why-panel-media {
+    min-height: 280px;
+    height: 280px;
+  }
+  .why-panel-title {
+    font-size: 1.5rem;
+  }
+  .why-panel-body {
+    padding: 30px 22px;
+  }
+  .about-agency-section {
+    padding: 75px 0 85px;
+  }
+  .about-collage-grid {
+    grid-template-rows: 190px 260px;
+    gap: 12px;
+  }
+  .about-play-wrapper {
+    top: 190px;
+  }
+  .about-play-btn {
+    width: 62px;
+    height: 62px;
+  }
+  .about-play-btn i {
+    font-size: 1.25rem;
+  }
+  .experience-card-number {
+    font-size: 2.85rem;
+  }
+  .about-agency-title {
+    font-size: 2rem;
   }
   .blog-grid {
     grid-template-columns: 1fr;
@@ -367,9 +523,6 @@
   .process-bg-sparkles {
     display: none;
   }
-  .process-bg-ripples {
-    opacity: 0.5;
-  }
 }
 
 /* Max Width: 480px */
@@ -399,10 +552,20 @@
     height: 52px;
     font-size: 28px;
   }
-  .experience-badge {
-    left: 15px;
-    bottom: 15px;
-    padding: 16px 20px;
+  .why-main-title {
+    font-size: 1.6rem;
+  }
+  .why-panel-media {
+    height: 250px;
+  }
+  .why-panel-title {
+    font-size: 1.35rem;
+  }
+  .why-panel-body {
+    padding: 24px 18px;
+  }
+  .why-checklist li {
+    font-size: 0.9rem;
   }
   .experience-number {
     font-size: 2.2rem;
@@ -450,5 +613,53 @@
   .process-track-line {
     top: 75px;
     bottom: 75px;
+  }
+  .about-collage-container {
+    padding-left: 8px;
+    padding-top: 8px;
+  }
+  .about-collage-grid {
+    grid-template-rows: 150px 210px;
+    gap: 10px;
+  }
+  .about-play-wrapper {
+    top: 150px;
+  }
+  .about-play-btn {
+    width: 52px;
+    height: 52px;
+  }
+  .about-play-btn i {
+    font-size: 1.15rem;
+  }
+  .experience-card-number {
+    font-size: 2.3rem;
+  }
+  .experience-card-label {
+    font-size: 0.78rem;
+  }
+  .about-feature-card {
+    padding: 16px 18px;
+    gap: 15px;
+  }
+  .about-feature-icon-box {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+  .about-feature-title {
+    font-size: 1.15rem;
+  }
+  .about-agency-title {
+    font-size: 1.75rem;
+  }
+  .about-agency-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    width: 100%;
+  }
+  .about-action-btn {
+    width: 100%;
   }
 }

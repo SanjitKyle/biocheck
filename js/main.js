@@ -494,5 +494,39 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  // 11. Why Choose Us Interactive Tabs (Mission / Vision / Philosophy)
+  const whyTabs = document.querySelectorAll('.why-tab-btn');
+  const whyPanels = document.querySelectorAll('.why-tab-panel');
+
+  if (whyTabs.length > 0 && whyPanels.length > 0) {
+    whyTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-tab');
+        if (!targetId) return;
+
+        // Deactivate all tabs & update ARIA
+        whyTabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+
+        // Hide all panels
+        whyPanels.forEach(p => {
+          p.classList.remove('active');
+        });
+
+        // Activate clicked tab
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        // Reveal corresponding panel
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) {
+          targetPanel.classList.add('active');
+        }
+      });
+    });
+  }
 });
 

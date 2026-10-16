@@ -17,8 +17,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/style.css?v=3.5">
+  <link rel="stylesheet" href="css/responsive.css?v=3.5">
 </head>
 <body>
 
@@ -41,12 +41,59 @@
           <li class="nav-item">
             <a href="#about" class="nav-link">About Us</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item nav-item-has-mega">
             <a href="#services" class="nav-link">Services <i class="fa-solid fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-item"><a href="#services">Commercial Cleaning</a></li>
-              <li class="dropdown-item"><a href="#services">Residential Cleaning</a></li>
-            </ul>
+            <div class="dropdown-mega-menu">
+              <div class="mega-menu-grid">
+                <!-- Left Column: Commercial Cleaning -->
+                <div class="mega-menu-column commercial-column">
+                  <div class="mega-column-header">
+                    <span class="mega-header-icon"><i class="fa-solid fa-building"></i></span>
+                    <div class="mega-header-title">
+                      <h4>Commercial Cleaning</h4>
+                      <small>Enterprise & Facility</small>
+                    </div>
+                  </div>
+                  <ul class="mega-service-list">
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Office & Workspace Cleaning</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Corporate Facility Maintenance</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Commercial Floor Scrubbing</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Industrial & Warehouse Cleaning</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Window & Glass Facade Cleaning</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Healthcare & Clinic Sanitization</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Post-Construction Cleanup</a></li>
+                  </ul>
+                  <a href="#services" class="mega-col-footer-btn">
+                    <span>Explore Commercial</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+
+                <!-- Right Column: Domestic Cleaning -->
+                <div class="mega-menu-column domestic-column">
+                  <div class="mega-column-header">
+                    <span class="mega-header-icon"><i class="fa-solid fa-house-chimney"></i></span>
+                    <div class="mega-header-title">
+                      <h4>Domestic Cleaning</h4>
+                      <small>Home & Residential</small>
+                    </div>
+                  </div>
+                  <ul class="mega-service-list">
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> House & Apartment Deep Clean</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Kitchen & Oven Degreasing</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Bathroom Sanitization & Tiles</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Carpet & Upholstery Steaming</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Move-In / Move-Out Cleaning</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Spring Seasonal Refresh</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Bio-Safe Allergen Elimination</a></li>
+                  </ul>
+                  <a href="#services" class="mega-col-footer-btn">
+                    <span>Explore Domestic</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
           </li>
           <li class="nav-item">
             <a href="#projects" class="nav-link">Project</a>
@@ -85,7 +132,29 @@
       <li class="mobile-nav-item"><a href="#why-choose">Why Choose Us</a></li>
       <li class="mobile-nav-item"><a href="#process">How It Works</a></li>
       <li class="mobile-nav-item"><a href="#about">About Us</a></li>
-      <li class="mobile-nav-item"><a href="#services">Our Services</a></li>
+      <li class="mobile-nav-item mobile-nav-has-sub">
+        <a href="#services" class="mobile-sub-toggle">Our Services <i class="fa-solid fa-chevron-down"></i></a>
+        <div class="mobile-sub-menu">
+          <div class="mobile-sub-column">
+            <span class="mobile-sub-header"><i class="fa-solid fa-building"></i> Commercial Cleaning</span>
+            <ul class="mobile-sub-items">
+              <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Office & Workspace</a></li>
+              <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Facility Maintenance</a></li>
+              <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Floor Scrubbing</a></li>
+              <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Clinic Sanitization</a></li>
+            </ul>
+          </div>
+          <div class="mobile-sub-column">
+            <span class="mobile-sub-header"><i class="fa-solid fa-house-chimney"></i> Domestic Cleaning</span>
+            <ul class="mobile-sub-items">
+              <li><a href="#services"><i class="fa-solid fa-angle-right"></i> House & Apartment</a></li>
+              <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Kitchen & Oven Degreasing</a></li>
+              <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Carpet & Upholstery</a></li>
+              <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Move-In / Move-Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
       <li class="mobile-nav-item"><a href="#counters">Achievements</a></li>
       <li class="mobile-nav-item"><a href="#projects">Projects</a></li>
       <li class="mobile-nav-item"><a href="#testimonials">Testimonials</a></li>
@@ -368,68 +437,754 @@
   </section>
 
   <!-- ==========================================================================
-       WHY CHOOSE US SECTION
+       WHY CHOOSE US (INTERACTIVE TABS: MISSION / VISION / PHILOSOPHY)
        ========================================================================== -->
-  <section id="why-choose" class="why-choose-us-section">
+  <style>
+    /* Why Choose Us - Ultra-Modern & Attractive Redesign */
+    .why-choose-tabbed-section {
+      position: relative;
+      background: linear-gradient(180deg, #edf3fa 0%, #f4f7fb 100%) !important;
+      padding: 105px 0 115px !important;
+      overflow: hidden;
+      color: #001837;
+      border-top: 1px solid rgba(0, 24, 55, 0.05);
+      border-bottom: 1px solid rgba(0, 24, 55, 0.05);
+    }
+
+    .why-header {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 38px;
+    }
+
+    .why-sub-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(251, 163, 17, 0.12) !important;
+      color: #001837 !important;
+      border: 1px solid rgba(251, 163, 17, 0.35);
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-family: var(--font-heading, 'Quicksand', sans-serif);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+    }
+
+    .why-sub-badge i {
+      color: #fba311;
+      font-size: 0.95rem;
+    }
+
+    .why-main-title {
+      font-family: var(--font-heading, 'Quicksand', sans-serif);
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: #001837 !important;
+      line-height: 1.22;
+      max-width: 860px;
+      letter-spacing: -0.5px;
+    }
+
+    /* Tabs Navigation Bar (Modern Elevated Segmented Cards) */
+    .why-tabs-nav {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 20px !important;
+      margin-bottom: 28px !important;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .why-tab-btn {
+      width: 100%;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 16px !important;
+      padding: 22px 24px !important;
+      border: 2px solid #e9eef5 !important;
+      border-radius: 16px !important;
+      outline: none;
+      cursor: pointer;
+      background: #ffffff !important;
+      box-shadow: 0 4px 18px rgba(0, 24, 55, 0.04) !important;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      text-align: left !important;
+    }
+
+    .why-tab-btn .tab-btn-icon {
+      width: 52px !important;
+      height: 52px !important;
+      border-radius: 14px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 1.35rem !important;
+      background: rgba(251, 163, 17, 0.12) !important;
+      color: #fba311 !important;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .why-tab-btn .tab-btn-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .why-tab-btn .tab-btn-kicker {
+      font-family: var(--font-heading, 'Quicksand', sans-serif);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #8899a6;
+      margin-bottom: 3px;
+      transition: color 0.3s ease;
+    }
+
+    .why-tab-btn .tab-btn-text {
+      font-family: var(--font-heading, 'Quicksand', sans-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #001837;
+      line-height: 1.2;
+      margin-bottom: 3px;
+      transition: color 0.3s ease;
+    }
+
+    .why-tab-btn .tab-btn-sub {
+      font-size: 0.82rem;
+      color: #6a7c8e;
+      font-weight: 500;
+      line-height: 1.3;
+      transition: color 0.3s ease;
+    }
+
+    .why-tab-btn:hover {
+      border-color: #fba311 !important;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 24, 55, 0.08) !important;
+      background: #ffffff !important;
+    }
+
+    .why-tab-btn:hover .tab-btn-icon {
+      background: #fba311 !important;
+      color: #001837 !important;
+      transform: scale(1.08) rotate(6deg);
+    }
+
+    .why-tab-btn:hover .tab-btn-kicker {
+      color: #fba311;
+    }
+
+    /* Active State (Signature Luxury Deep Navy Card with Gold Accents) */
+    .why-tab-btn.active {
+      background: linear-gradient(135deg, #001837 0%, #062752 100%) !important;
+      border-color: #001837 !important;
+      box-shadow: 0 14px 34px rgba(0, 24, 55, 0.18) !important;
+      transform: translateY(-2px);
+    }
+
+    .why-tab-btn.active .tab-btn-icon {
+      background: #fba311 !important;
+      color: #001837 !important;
+      box-shadow: 0 6px 16px rgba(251, 163, 17, 0.4);
+    }
+
+    .why-tab-btn.active .tab-btn-kicker {
+      color: #fba311 !important;
+    }
+
+    .why-tab-btn.active .tab-btn-text {
+      color: #ffffff !important;
+    }
+
+    .why-tab-btn.active .tab-btn-sub {
+      color: rgba(255, 255, 255, 0.75) !important;
+    }
+
+    .why-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3.5px;
+      background: linear-gradient(90deg, #fba311, #ffd278);
+    }
+
+    /* Tab Panels Container (Elevated Modern Showcase Card) */
+    .why-tab-panels-wrapper {
+      position: relative;
+      background: #ffffff !important;
+      border: 1.5px solid #e9eef5 !important;
+      border-radius: 22px !important;
+      box-shadow: 0 22px 60px rgba(0, 24, 55, 0.07) !important;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .why-tab-panel {
+      display: none;
+      opacity: 0;
+    }
+
+    .why-tab-panel.active {
+      display: block;
+      opacity: 1;
+      animation: whyTabFade 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    @keyframes whyTabFade {
+      0% { opacity: 0; transform: translateY(14px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .why-panel-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1.08fr !important;
+      min-height: 520px;
+    }
+
+    .why-panel-media {
+      position: relative;
+      overflow: hidden;
+      background: #f4f7fb;
+      min-height: 520px;
+    }
+
+    .why-panel-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .why-panel-grid:hover .why-panel-media img {
+      transform: scale(1.04);
+    }
+
+    /* Floating Quality Badge over Media */
+    .why-media-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(0, 24, 55, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-family: var(--font-heading, 'Quicksand', sans-serif);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .media-badge-stars {
+      display: flex;
+      gap: 3px;
+      color: #fba311;
+      font-size: 0.8rem;
+    }
+
+    .media-badge-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .why-panel-body {
+      padding: 54px 58px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      background: #ffffff !important;
+    }
+
+    .why-panel-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading, 'Quicksand', sans-serif);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #fba311;
+      margin-bottom: 12px;
+    }
+
+    .why-panel-title {
+      font-family: var(--font-heading, 'Quicksand', sans-serif);
+      font-size: 2.15rem !important;
+      font-weight: 700 !important;
+      color: #001837 !important;
+      line-height: 1.25 !important;
+      margin-bottom: 6px !important;
+    }
+
+    /* Modern Dual-Accent Underline */
+    .why-title-accent {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 12px 0 22px;
+    }
+
+    .why-title-accent .accent-bar {
+      width: 48px;
+      height: 3.5px;
+      background: #fba311;
+      border-radius: 2px;
+    }
+
+    .why-title-accent .accent-dot {
+      width: 6px;
+      height: 3.5px;
+      background: #fba311;
+      border-radius: 2px;
+    }
+
+    .why-panel-desc {
+      font-size: 1.02rem !important;
+      color: #4b5d6e !important;
+      line-height: 1.76 !important;
+      margin-bottom: 24px !important;
+    }
+
+    /* Elevated Modern Checklist Cards */
+    .why-checklist {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      margin-bottom: 32px !important;
+    }
+
+    .why-check-item {
+      background: #f8fafc !important;
+      border: 1.5px solid #edf2f7 !important;
+      border-radius: 12px !important;
+      padding: 14px 18px !important;
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 14px !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .why-check-item:hover {
+      background: #ffffff !important;
+      border-color: rgba(251, 163, 17, 0.5) !important;
+      transform: translateX(5px) !important;
+      box-shadow: 0 6px 20px rgba(0, 24, 55, 0.06) !important;
+    }
+
+    .why-check-icon {
+      width: 26px !important;
+      height: 26px !important;
+      border-radius: 50% !important;
+      background: #fba311 !important;
+      color: #001837 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 0.85rem !important;
+      font-weight: 800 !important;
+      flex-shrink: 0 !important;
+      margin-top: 2px !important;
+    }
+
+    .why-check-info strong {
+      display: block !important;
+      font-size: 0.98rem !important;
+      color: #001837 !important;
+      font-weight: 700 !important;
+      margin-bottom: 2px !important;
+    }
+
+    .why-check-info span {
+      display: block !important;
+      font-size: 0.88rem !important;
+      color: #627282 !important;
+      line-height: 1.45 !important;
+    }
+
+    /* Action Row */
+    .why-action-row {
+      display: flex !important;
+      align-items: center !important;
+      gap: 26px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .why-panel-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      background: #001837 !important;
+      color: #ffffff !important;
+      padding: 15px 32px !important;
+      border-radius: 8px !important;
+      font-family: var(--font-heading, 'Quicksand', sans-serif);
+      font-size: 0.95rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.5px !important;
+      text-decoration: none !important;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+      box-shadow: 0 6px 18px rgba(0, 24, 55, 0.18) !important;
+    }
+
+    .why-panel-btn i {
+      font-size: 0.95rem;
+      transition: transform 0.3s ease;
+    }
+
+    .why-panel-btn:hover {
+      background: #fba311 !important;
+      color: #001837 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 10px 24px rgba(251, 163, 17, 0.4) !important;
+    }
+
+    .why-panel-btn:hover i {
+      transform: translateX(4px);
+    }
+
+    /* Quick Hotline Callout */
+    .why-phone-hotline {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      text-decoration: none !important;
+      color: #001837 !important;
+      transition: transform 0.3s ease;
+    }
+
+    .why-phone-hotline:hover {
+      transform: translateX(3px);
+    }
+
+    .why-phone-hotline .hotline-icon {
+      width: 44px !important;
+      height: 44px !important;
+      border-radius: 50% !important;
+      background: rgba(251, 163, 17, 0.15) !important;
+      color: #fba311 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 1.1rem !important;
+    }
+
+    .why-phone-hotline .hotline-text small {
+      display: block !important;
+      font-size: 0.75rem !important;
+      text-transform: uppercase !important;
+      letter-spacing: 1px !important;
+      color: #7b8b9a !important;
+      font-weight: 600 !important;
+    }
+
+    .why-phone-hotline .hotline-text strong {
+      display: block !important;
+      font-size: 1rem !important;
+      color: #001837 !important;
+      font-family: var(--font-heading, 'Quicksand', sans-serif);
+      font-weight: 700 !important;
+    }
+
+    @media (max-width: 991px) {
+      .why-panel-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .why-panel-media {
+        min-height: 340px !important;
+        height: 340px !important;
+      }
+      .why-panel-body {
+        padding: 40px 32px !important;
+      }
+      .why-tabs-nav {
+        gap: 12px !important;
+      }
+      .why-tab-btn {
+        padding: 16px 18px !important;
+        gap: 12px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .why-tabs-nav {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+      .why-tab-btn {
+        padding: 14px 18px !important;
+      }
+      .why-panel-title {
+        font-size: 1.6rem !important;
+      }
+      .why-action-row {
+        gap: 18px !important;
+      }
+    }
+  </style>
+  <section id="why-choose" class="why-choose-tabbed-section">
+    <!-- Ambient Sparkle Flourish in Top-Right -->
+    <div class="why-ambient-sparkle" aria-hidden="true">
+      <svg viewBox="0 0 100 100" class="why-sparkle-svg">
+        <path d="M50 0 C50 28 28 50 0 50 C28 50 50 72 50 100 C50 72 72 50 100 50 C72 50 50 28 50 0 Z" fill="rgba(0, 24, 55, 0.04)"/>
+      </svg>
+    </div>
+
     <div class="container">
-      <div class="why-choose-grid">
-        <!-- Left Image with Experience Badge -->
-        <div class="why-image-wrapper">
-          <img src="assets/images/service-img-01-880x620.jpg" alt="Why Choose BioCleaning">
-          <div class="experience-badge">
-            <div class="experience-number">25+</div>
-            <div class="experience-text">Years of<br>Experience</div>
+      <!-- Section Header -->
+      <div class="why-header">
+        <div class="why-sub-badge cc-fade-reveal">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>WHY CHOOSE US?</span>
+        </div>
+        <h2 class="why-main-title cc-text-reveal">We Will Make Absolutely Any Place Clean, Neat & Tidy.</h2>
+      </div>
+
+      <!-- Tab Navigation Buttons (Modern Segmented Floating Cards) -->
+      <div class="why-tabs-nav" role="tablist" aria-label="Why Choose Us Tabs">
+        <button type="button" class="why-tab-btn active" role="tab" id="tab-mission" aria-selected="true" aria-controls="panel-mission" data-tab="panel-mission">
+          <span class="tab-btn-icon"><i class="fa-solid fa-bullseye"></i></span>
+          <div class="tab-btn-content">
+            <span class="tab-btn-kicker">01 / GUARANTEE</span>
+            <span class="tab-btn-text">Our Mission</span>
+            <span class="tab-btn-sub">100% Satisfaction Guarantee</span>
+          </div>
+        </button>
+
+        <button type="button" class="why-tab-btn" role="tab" id="tab-vision" aria-selected="false" aria-controls="panel-vision" data-tab="panel-vision">
+          <span class="tab-btn-icon"><i class="fa-solid fa-mountain-sun"></i></span>
+          <div class="tab-btn-content">
+            <span class="tab-btn-kicker">02 / INNOVATION</span>
+            <span class="tab-btn-text">Our Vision</span>
+            <span class="tab-btn-sub">Smart Green Bio-Sanitization</span>
+          </div>
+        </button>
+
+        <button type="button" class="why-tab-btn" role="tab" id="tab-philosophy" aria-selected="false" aria-controls="panel-philosophy" data-tab="panel-philosophy">
+          <span class="tab-btn-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+          <div class="tab-btn-content">
+            <span class="tab-btn-kicker">03 / INTEGRITY</span>
+            <span class="tab-btn-text">Our Philosophy</span>
+            <span class="tab-btn-sub">Honesty & Client-First Trust</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Tab Content Panels Wrapper (Elevated Showcase Card) -->
+      <div class="why-tab-panels-wrapper">
+        <!-- Panel 1: Our Mission (Active by Default) -->
+        <div class="why-tab-panel active" id="panel-mission" role="tabpanel" aria-labelledby="tab-mission">
+          <div class="why-panel-grid">
+            <div class="why-panel-media">
+              <img src="assets/images/service-img-01-880x620.jpg" alt="Our Mission - Professional Deep Cleaning" loading="lazy">
+              <div class="why-media-badge">
+                <div class="media-badge-stars">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <span class="media-badge-label">100% Quality Guaranteed</span>
+              </div>
+            </div>
+            <div class="why-panel-body">
+              <div class="why-panel-kicker">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>OUR CORE COMMITMENT</span>
+              </div>
+              <h3 class="why-panel-title">Our Two-Part Satisfaction Guarantee!</h3>
+              <div class="why-title-accent">
+                <span class="accent-bar"></span>
+                <span class="accent-dot"></span>
+              </div>
+              <p class="why-panel-desc">
+                We are dedicated to providing the highest standard of eco-friendly sanitization and spotless cleanliness for every home and business. If you are not completely satisfied with any area we've cleaned, simply notify us within 24 hours and we will re-clean it immediately at no additional cost.
+              </p>
+              <div class="why-checklist">
+                <div class="why-check-item">
+                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
+                  <div class="why-check-info">
+                    <strong>Hospital-Grade Safe Sanitization</strong>
+                    <span>100% non-toxic, pet-safe, and biodegradable formulas.</span>
+                  </div>
+                </div>
+                <div class="why-check-item">
+                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
+                  <div class="why-check-info">
+                    <strong>Vetted & Certified Cleaners</strong>
+                    <span>Rigorous background-checked specialists equipped with modern tools.</span>
+                  </div>
+                </div>
+                <div class="why-check-item">
+                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
+                  <div class="why-check-info">
+                    <strong>Rapid 24-Hour Re-Clean Policy</strong>
+                    <span>Complete peace of mind with prompt, free re-cleans on demand.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="why-action-row">
+                <a href="#services" class="why-panel-btn">
+                  <span>VIEW TERMS OF SERVICE</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="tel:+1212255511" class="why-phone-hotline">
+                  <span class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></span>
+                  <div class="hotline-text">
+                    <small>Call Us Anytime</small>
+                    <strong>+1 (212) 255-511</strong>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Right Content -->
-        <div class="why-content">
-          <span class="sub-title">Why choose us?</span>
-          <h2 class="main-title">We work many fields to clean your surrounding area</h2>
-          <p>We provide you the best service quality with best rate all the time no matter you're looking for residential or commercial cleaning services.</p>
-
-          <div class="why-features-grid">
-            <!-- Feature Card 1 -->
-            <div class="why-feature-card">
-              <div class="why-feature-header">
-                <div class="why-feature-icon"><i class="fa-solid fa-user-shield"></i></div>
-                <h4>Experienced Staff</h4>
+        <!-- Panel 2: Our Vision -->
+        <div class="why-tab-panel" id="panel-vision" role="tabpanel" aria-labelledby="tab-vision">
+          <div class="why-panel-grid">
+            <div class="why-panel-media">
+              <img src="assets/images/service-img-04-880x620.jpg" alt="Our Vision - Next Generation Sanitization" loading="lazy">
+              <div class="why-media-badge">
+                <div class="media-badge-stars">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <span class="media-badge-label">Eco Bio-Tech Standard</span>
               </div>
-              <p>Office Services Sweeping Mopping Kitchen Cleaning, equipped with modern appliances.</p>
             </div>
-
-            <!-- Feature Card 2 -->
-            <div class="why-feature-card">
-              <div class="why-feature-header">
-                <div class="why-feature-icon"><i class="fa-solid fa-leaf"></i></div>
-                <h4>Natural Products</h4>
+            <div class="why-panel-body">
+              <div class="why-panel-kicker">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>FORWARD-THINKING SANITIZATION</span>
               </div>
-              <p>Cleaning and sanitizing using eco-friendly, non-toxic products safe for children and pets.</p>
-            </div>
-
-            <!-- Feature Card 3 -->
-            <div class="why-feature-card">
-              <div class="why-feature-header">
-                <div class="why-feature-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h4>Fast Service</h4>
+              <h3 class="why-panel-title">Setting The Benchmark For Modern Bio-Sanitization</h3>
+              <div class="why-title-accent">
+                <span class="accent-bar"></span>
+                <span class="accent-dot"></span>
               </div>
-              <p>Quick turnaround times with rapid on-demand dispatch for urgent sanitization needs.</p>
-            </div>
-
-            <!-- Feature Card 4 -->
-            <div class="why-feature-card">
-              <div class="why-feature-header">
-                <div class="why-feature-icon"><i class="fa-solid fa-toolbox"></i></div>
-                <h4>Best Equipment</h4>
+              <p class="why-panel-desc">
+                Our vision is to transform modern cleaning standards by integrating smart, hospital-grade biocide technology with green sustainability. We strive to create healthier indoor ecosystems for families and enterprise workspaces, reducing allergens, germs, and environmental footprint across every facility.
+              </p>
+              <div class="why-checklist">
+                <div class="why-check-item">
+                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
+                  <div class="why-check-info">
+                    <strong>Advanced HEPA-Filtration Systems</strong>
+                    <span>Eliminating 99.97% of airborne pathogens and microscopic dust.</span>
+                  </div>
+                </div>
+                <div class="why-check-item">
+                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
+                  <div class="why-check-info">
+                    <strong>Zero-Residue Bio Formulations</strong>
+                    <span>Promoting natural microbiome health without chemical films.</span>
+                  </div>
+                </div>
+                <div class="why-check-item">
+                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
+                  <div class="why-check-info">
+                    <strong>Sustainable Carbon-Neutral Roadmap</strong>
+                    <span>100% green supply chain and eco-certified machinery.</span>
+                  </div>
+                </div>
               </div>
-              <p>State-of-the-art HEPA filtration vacuums, steam cleaners, and industrial scrubbers.</p>
+              <div class="why-action-row">
+                <a href="#about" class="why-panel-btn">
+                  <span>OUR CLEANING PROMISE</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="tel:+1212255511" class="why-phone-hotline">
+                  <span class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></span>
+                  <div class="hotline-text">
+                    <small>Call Us Anytime</small>
+                    <strong>+1 (212) 255-511</strong>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
+        </div>
 
-          <a href="#about" class="btn btn-primary">
-            <span>Know More</span>
-            <span class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-          </a>
+        <!-- Panel 3: Our Philosophy -->
+        <div class="why-tab-panel" id="panel-philosophy" role="tabpanel" aria-labelledby="tab-philosophy">
+          <div class="why-panel-grid">
+            <div class="why-panel-media">
+              <img src="assets/images/service-img-06-880x620.jpg" alt="Our Philosophy - Care and Consistency" loading="lazy">
+              <div class="why-media-badge">
+                <div class="media-badge-stars">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <span class="media-badge-label">Client Care & Trust</span>
+              </div>
+            </div>
+            <div class="why-panel-body">
+              <div class="why-panel-kicker">
+                <i class="fa-solid fa-heart"></i>
+                <span>ETHICAL & HUMAN-CENTERED</span>
+              </div>
+              <h3 class="why-panel-title">Care, Consistency, And Absolute Transparency</h3>
+              <div class="why-title-accent">
+                <span class="accent-bar"></span>
+                <span class="accent-dot"></span>
+              </div>
+              <p class="why-panel-desc">
+                At BioCleaning, our philosophy is anchored in deep respect for our clients' spaces and well-being. We believe that true cleanliness is not just aesthetic—it creates mental clarity, promotes physical vitality, and inspires confidence across every corner of your home and workplace.
+              </p>
+              <div class="why-checklist">
+                <div class="why-check-item">
+                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
+                  <div class="why-check-info">
+                    <strong>Honest Flat-Rate Pricing</strong>
+                    <span>Completely transparent quotes with zero surprise surcharges.</span>
+                  </div>
+                </div>
+                <div class="why-check-item">
+                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
+                  <div class="why-check-info">
+                    <strong>Rigorous 50-Point Inspection</strong>
+                    <span>Systematic quality checks signed off before job completion.</span>
+                  </div>
+                </div>
+                <div class="why-check-item">
+                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
+                  <div class="why-check-info">
+                    <strong>Genuine Personal Pride</strong>
+                    <span>Treating your sanctuary with utmost respect and meticulous care.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="why-action-row">
+                <a href="#services" class="why-panel-btn">
+                  <span>EXPLORE OUR SERVICES</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="tel:+1212255511" class="why-phone-hotline">
+                  <span class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></span>
+                  <div class="hotline-text">
+                    <small>Call Us Anytime</small>
+                    <strong>+1 (212) 255-511</strong>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -452,14 +1207,6 @@
       <div class="process-bg-dot dot-1"></div>
     </div>
 
-    <div class="process-bg-ripples" aria-hidden="true">
-      <svg viewBox="0 0 300 300" class="ripples-svg">
-        <circle cx="300" cy="300" r="80" stroke="rgba(0, 24, 55, 0.04)" stroke-width="1.5" fill="none"/>
-        <circle cx="300" cy="300" r="140" stroke="rgba(0, 24, 55, 0.04)" stroke-width="1.5" fill="none"/>
-        <circle cx="300" cy="300" r="200" stroke="rgba(0, 24, 55, 0.03)" stroke-width="1.5" fill="none"/>
-        <circle cx="300" cy="300" r="260" stroke="rgba(0, 24, 55, 0.02)" stroke-width="1.5" fill="none"/>
-      </svg>
-    </div>
 
     <div class="container">
       <!-- Section Header -->
@@ -559,51 +1306,129 @@
   </section>
 
   <!-- ==========================================================================
-       WHO WE ARE (ABOUT US)
+       ABOUT US (ABOUT CLEANING AGENCY)
        ========================================================================== -->
-  <section id="about" class="who-we-are-section">
+  <section id="about" class="about-agency-section">
     <div class="container">
-      <div class="who-grid">
-        <!-- Left Content -->
-        <div class="who-content">
-          <span class="sub-title">Who We Are</span>
-          <h2 class="main-title">Most awarded cleaning company since 1995.</h2>
-          <p class="who-desc">We carefully screen all of our cleaners, so you can rest assured that your home would receive the absolute highest quality of service providing. We know that if you love our service you're going to recommend us.</p>
+      <div class="about-agency-grid">
+        <!-- Left Column: 4-Quadrant Photo & Experience Collage -->
+        <div class="about-collage-container">
+          <!-- Ambient Glow behind Collage -->
+          <div class="about-collage-glow" aria-hidden="true"></div>
 
-          <div class="who-tabs-cards">
-            <div class="who-card">
-              <div class="who-card-icon"><i class="fa-solid fa-building"></i></div>
-              <h4>Office Cleaning</h4>
-              <p>Comprehensive workspace sanitation including workstations, keyboards, and conference suites.</p>
+          <!-- Architectural Border Accent Lines with Golden Joint Dot -->
+          <div class="collage-frame-line vertical-frame" aria-hidden="true"></div>
+          <div class="collage-frame-line horizontal-frame" aria-hidden="true"></div>
+          <div class="collage-joint-dot" aria-hidden="true"></div>
+
+          <div class="about-collage-grid">
+            <!-- Tile 1 (Top Left): Cleaning Supplies / Specialist -->
+            <div class="collage-tile tile-top-left">
+              <img src="assets/images/service-img-04-880x620.jpg" alt="Professional Cleaning Supplies" class="collage-img">
+              <div class="collage-tile-overlay"></div>
             </div>
-            <div class="who-card">
-              <div class="who-card-icon"><i class="fa-solid fa-house-chimney"></i></div>
-              <h4>Home Cleaning</h4>
-              <p>Don't bother yourself with home chores; let our verified cleaners handle every single room.</p>
+
+            <!-- Tile 2 (Top Right): 30+ Years Experience Luxury Card -->
+            <div class="collage-tile tile-experience-card">
+              <div class="experience-card-bar"></div>
+              <div class="experience-card-inner">
+                <div class="experience-mini-badge">
+                  <i class="fa-solid fa-medal"></i>
+                  <span>EST. 1995</span>
+                </div>
+                <div class="experience-card-number">30<span class="exp-plus">+</span></div>
+                <div class="experience-card-label">Years Of Experience</div>
+                <div class="experience-subtext">Certified Excellence</div>
+              </div>
+            </div>
+
+            <!-- Tile 3 (Bottom Left): Window Cleaner with Squeegee -->
+            <div class="collage-tile tile-bottom-left">
+              <img src="assets/images/service-img-03-880x620.jpg" alt="Window Cleaning Specialist" class="collage-img">
+              <div class="collage-tile-overlay"></div>
+            </div>
+
+            <!-- Tile 4 (Bottom Right): Surface Deep Cleaner -->
+            <div class="collage-tile tile-bottom-right">
+              <img src="assets/images/service-img-02-880x620.jpg" alt="Commercial Deep Cleaning" class="collage-img">
+              <div class="collage-tile-overlay"></div>
+            </div>
+
+            <!-- Center Floating Clinic Badge (Center Intersection with Gold Glow Pulse) -->
+            <div class="about-play-wrapper">
+              <div class="about-play-btn about-clinic-badge" aria-label="Clinical Sanitization Certification" title="Clinical Sanitation Services">
+                <span class="play-pulse-ring"></span>
+                <span class="play-pulse-ring delay-1"></span>
+                <i class="fa-solid fa-house-medical"></i>
+              </div>
             </div>
           </div>
-
-          <ul class="who-checklist">
-            <li><i class="fa-solid fa-circle-check"></i> Performers are Selected and Trained with thorough checks.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Cleaners are Monitored, Including Customer Reviews & Satisfaction.</li>
-          </ul>
-
-          <a href="#services" class="btn btn-dark">
-            <span>Discover Services</span>
-            <span class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-          </a>
         </div>
 
-        <!-- Right Image & Call Card -->
-        <div class="who-images-box">
-          <div class="who-main-img">
-            <img src="assets/images/service-img-02-880x620.jpg" alt="About BioCleaning">
+        <!-- Right Column: Content Area -->
+        <div class="about-agency-content">
+          <!-- Subtitle Kicker Pill Badge -->
+          <div class="about-agency-kicker cc-fade-reveal">
+            <span class="kicker-pill">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span>ABOUT CLEANING AGENCY</span>
+            </span>
           </div>
-          <div class="call-card">
-            <div class="call-icon"><i class="fa-solid fa-phone"></i></div>
-            <div class="call-info">
-              <span>Need Help? Call Us</span>
-              <h5>+1(212)255-511</h5>
+
+          <!-- Main Title (automatically animated with Craft Combine split-reveal) -->
+          <h2 class="about-agency-title main-title">We Are A Highly Experienced Cleaning Service Company</h2>
+
+          <!-- Introductory Paragraph -->
+          <p class="about-agency-lead">
+            With over 30 years of premier industry leadership, BioCleaning delivers meticulous, reliable, and eco-certified sanitation solutions. We combine cutting-edge technology with certified cleaning specialists to transform homes and business workspaces into pristine sanctuaries.
+          </p>
+
+          <!-- 2 Elevated Feature Cards with Navy/Gold Accents -->
+          <div class="about-agency-features">
+            <!-- Feature Card 1: Commercial Cleaning -->
+            <div class="about-feature-card">
+              <div class="about-feature-icon-box">
+                <i class="fa-solid fa-building-shield"></i>
+              </div>
+              <div class="about-feature-text">
+                <h4 class="about-feature-title">Commercial Cleaning</h4>
+                <p class="about-feature-desc">Tailored sanitization and scheduled maintenance programs for corporate offices, healthcare facilities, and retail enterprises.</p>
+              </div>
+              <div class="feature-card-arrow" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <!-- Feature Card 2: Residential Cleaning -->
+            <div class="about-feature-card">
+              <div class="about-feature-icon-box">
+                <i class="fa-solid fa-house-chimney-window"></i>
+              </div>
+              <div class="about-feature-text">
+                <h4 class="about-feature-title">Residential Cleaning</h4>
+                <p class="about-feature-desc">Comprehensive deep cleaning, allergen elimination, and domestic upkeep customized to your family's routine.</p>
+              </div>
+              <div class="feature-card-arrow" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions: Signature Pill Button & Hotline Callout -->
+          <div class="about-agency-actions">
+            <a href="#services" class="btn btn-primary about-action-btn">
+              <span>Read More</span>
+              <span class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <div class="about-hotline-wrap">
+              <div class="about-hotline-icon">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div class="about-hotline-info">
+                <span class="hotline-tag">Call Us Anytime</span>
+                <a href="tel:+1212255511" class="hotline-number">+1 (212) 255-511</a>
+              </div>
             </div>
           </div>
         </div>
