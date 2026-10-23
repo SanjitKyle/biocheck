@@ -17,8 +17,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=7.3">
-  <link rel="stylesheet" href="css/responsive.css?v=7.3">
+  <link rel="stylesheet" href="css/style.css?v=7.5">
+  <link rel="stylesheet" href="css/responsive.css?v=7.5">
 </head>
 <body>
 
@@ -1326,6 +1326,35 @@
        OUR SUCCESSFUL PROJECT (100% MATCHED TO REFERENCE DESIGN)
        ========================================================================== -->
   <section id="projects" class="projects-showcase-section">
+    <!-- Top-Right Decorative Gradient Circle with Golden Arc Contour -->
+    <div class="projects-gradient-circle-tr" aria-hidden="true">
+      <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="projCircleGradTR" cx="62%" cy="32%" r="68%" fx="62%" fy="32%">
+            <stop offset="0%" stop-color="#fff0d4" stop-opacity="0.95" />
+            <stop offset="42%" stop-color="#fef4e1" stop-opacity="0.85" />
+            <stop offset="78%" stop-color="#fef8ed" stop-opacity="0.65" />
+            <stop offset="100%" stop-color="#fffaf0" stop-opacity="0.4" />
+          </radialGradient>
+        </defs>
+        <circle cx="340" cy="95" r="305" fill="url(#projCircleGradTR)" stroke="#fba311" stroke-width="2.2" />
+      </svg>
+    </div>
+
+    <!-- Bottom-Left Decorative Gradient Circle -->
+    <div class="projects-gradient-circle-bl" aria-hidden="true">
+      <svg viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="projCircleGradBL" cx="12%" cy="88%" r="78%">
+            <stop offset="0%" stop-color="#fef2da" stop-opacity="0.9" />
+            <stop offset="48%" stop-color="#fef8ec" stop-opacity="0.6" />
+            <stop offset="90%" stop-color="#ffffff" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <circle cx="60" cy="360" r="300" fill="url(#projCircleGradBL)" />
+      </svg>
+    </div>
+
     <div class="container">
       <!-- Section Header -->
       <div class="projects-header-wrap">
@@ -1362,11 +1391,8 @@
           </svg>
         </div>
 
-        <!-- Right CTA Button with Background Golden Arc -->
+        <!-- Right CTA Button -->
         <div class="projects-header-right">
-          <svg class="projects-decor-arc" viewBox="0 0 240 240" fill="none" aria-hidden="true">
-            <path d="M20 0C20 110 90 200 240 200" stroke="#fba311" stroke-width="2" stroke-linecap="round" fill="none"/>
-          </svg>
           <a href="#services" class="projects-cta-btn">
             <span>VIEW ALL PROJECTS</span>
             <span class="cta-arrow-disc">
@@ -1379,35 +1405,123 @@
         </div>
       </div>
 
-      <!-- 4-Column High-Fidelity Project Gallery Grid -->
+      <!-- 4-Column Native HTML/CSS Projects Cards (Ultra-Crisp, High-Resolution Assets) -->
       <div class="projects-gallery-grid">
-        <!-- Project Card 1: Carpet & Floor Cleaning -->
-        <div class="project-card-item">
-          <a href="#services" class="project-card-link" aria-label="Carpet and Floor Cleaning Project Details">
-            <img src="assets/images/project_hd_card1.png" alt="Carpet & Floor Cleaning - Deep cleaning for carpets, tiles, hardwood & all floor types" class="project-card-img" loading="lazy">
-          </a>
-        </div>
+        <!-- Card 1: Carpet & Floor Cleaning -->
+        <a href="#services" class="project-card-box" aria-label="Carpet and Floor Cleaning Project Details">
+          <img src="assets/images/service-img-05-880x620.jpg" alt="Carpet & Floor Cleaning" class="project-card-bg" loading="lazy">
+          <div class="project-card-scrim"></div>
+          <div class="project-corner-wedge" aria-hidden="true"></div>
 
-        <!-- Project Card 2: Office Cleaning -->
-        <div class="project-card-item">
-          <a href="#services" class="project-card-link" aria-label="Office Cleaning Project Details">
-            <img src="assets/images/project_hd_card2.png" alt="Office Cleaning - Clean, healthy and productive workspaces for your business" class="project-card-img" loading="lazy">
-          </a>
-        </div>
+          <div class="project-card-top">
+            <span class="project-category-pill">
+              <i class="fa-solid fa-house"></i> Carpet & Floor
+            </span>
+            <span class="project-icon-box" aria-hidden="true">
+              <i class="fa-solid fa-broom"></i>
+            </span>
+          </div>
 
-        <!-- Project Card 3: Sanitization -->
-        <div class="project-card-item">
-          <a href="#services" class="project-card-link" aria-label="Sanitization Project Details">
-            <img src="assets/images/project_hd_card3.png" alt="Sanitization - Safe, hygienic and germ-free spaces for better health" class="project-card-img" loading="lazy">
-          </a>
-        </div>
+          <div class="project-card-bottom">
+            <div class="project-gold-dash" aria-hidden="true"></div>
+            <h3 class="project-card-title">Carpet & Floor Cleaning</h3>
+            <p class="project-card-desc">Deep cleaning for carpets, tiles, hardwood & all floor types.</p>
+            <div class="project-card-action">
+              <span class="project-action-disc" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+              <span class="project-action-label">View Project</span>
+              <span class="project-action-line" aria-hidden="true"></span>
+            </div>
+          </div>
+        </a>
 
-        <!-- Project Card 4: Residential Cleaning -->
-        <div class="project-card-item">
-          <a href="#services" class="project-card-link" aria-label="Residential Cleaning Project Details">
-            <img src="assets/images/project_hd_card4.png" alt="Residential Cleaning - A spotless home for a healthier, happier you" class="project-card-img" loading="lazy">
-          </a>
-        </div>
+        <!-- Card 2: Office Cleaning -->
+        <a href="#services" class="project-card-box" aria-label="Office Cleaning Project Details">
+          <img src="assets/images/service-img-02-880x620.jpg" alt="Office Cleaning" class="project-card-bg" loading="lazy">
+          <div class="project-card-scrim"></div>
+          <div class="project-corner-wedge" aria-hidden="true"></div>
+
+          <div class="project-card-top">
+            <span class="project-category-pill">
+              <i class="fa-solid fa-building"></i> Office Cleaning
+            </span>
+            <span class="project-icon-box" aria-hidden="true">
+              <i class="fa-solid fa-city"></i>
+            </span>
+          </div>
+
+          <div class="project-card-bottom">
+            <div class="project-gold-dash" aria-hidden="true"></div>
+            <h3 class="project-card-title">Office Cleaning</h3>
+            <p class="project-card-desc">Clean, healthy and productive workspaces for your business.</p>
+            <div class="project-card-action">
+              <span class="project-action-disc" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+              <span class="project-action-label">View Project</span>
+              <span class="project-action-line" aria-hidden="true"></span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3: Sanitization -->
+        <a href="#services" class="project-card-box" aria-label="Sanitization Project Details">
+          <img src="assets/images/service-img-04-880x620.jpg" alt="Sanitization" class="project-card-bg" loading="lazy">
+          <div class="project-card-scrim"></div>
+          <div class="project-corner-wedge" aria-hidden="true"></div>
+
+          <div class="project-card-top">
+            <span class="project-category-pill">
+              <i class="fa-solid fa-shield-halved"></i> Sanitization
+            </span>
+            <span class="project-icon-box" aria-hidden="true">
+              <i class="fa-solid fa-shield-virus"></i>
+            </span>
+          </div>
+
+          <div class="project-card-bottom">
+            <div class="project-gold-dash" aria-hidden="true"></div>
+            <h3 class="project-card-title">Sanitization</h3>
+            <p class="project-card-desc">Safe, hygienic and germ-free spaces for better health.</p>
+            <div class="project-card-action">
+              <span class="project-action-disc" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+              <span class="project-action-label">View Project</span>
+              <span class="project-action-line" aria-hidden="true"></span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 4: Residential Cleaning -->
+        <a href="#services" class="project-card-box" aria-label="Residential Cleaning Project Details">
+          <img src="assets/images/service-img-01-880x620.jpg" alt="Residential Cleaning" class="project-card-bg" loading="lazy">
+          <div class="project-card-scrim"></div>
+          <div class="project-corner-wedge" aria-hidden="true"></div>
+
+          <div class="project-card-top">
+            <span class="project-category-pill">
+              <i class="fa-solid fa-house"></i> Residential
+            </span>
+            <span class="project-icon-box" aria-hidden="true">
+              <i class="fa-solid fa-house-chimney"></i>
+            </span>
+          </div>
+
+          <div class="project-card-bottom">
+            <div class="project-gold-dash" aria-hidden="true"></div>
+            <h3 class="project-card-title">Residential Cleaning</h3>
+            <p class="project-card-desc">A spotless home for a healthier, happier you.</p>
+            <div class="project-card-action">
+              <span class="project-action-disc" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+              <span class="project-action-label">View Project</span>
+              <span class="project-action-line" aria-hidden="true"></span>
+            </div>
+          </div>
+        </a>
       </div>
 
       <!-- Bottom Trust Badges Strip with Dot Matrices -->

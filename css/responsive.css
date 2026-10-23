@@ -356,7 +356,14 @@
   .projects-script-flourish {
     display: none;
   }
-  .projects-decor-arc {
+  .projects-gradient-circle-tr {
+    right: -140px;
+    top: -140px;
+    width: 420px;
+    height: 420px;
+    opacity: 0.65;
+  }
+  .projects-gradient-circle-bl {
     display: none;
   }
   .projects-gallery-grid {
@@ -566,12 +573,18 @@
   .projects-showcase-section {
     padding: 60px 0 50px;
   }
+  .projects-gradient-circle-tr {
+    display: none;
+  }
   .projects-main-title {
     font-size: 2rem;
   }
   .projects-gallery-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  .project-card-box {
+    height: 440px;
   }
   .trust-badges-container {
     grid-template-columns: 1fr;

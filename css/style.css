@@ -3742,13 +3742,48 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+/* Top-Right Decorative Gradient Circle with Golden Arc Contour */
+.projects-gradient-circle-tr {
+  position: absolute;
+  right: calc((100% - 1240px) / 2 - 100px);
+  top: -120px;
+  width: 540px;
+  height: 540px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.projects-gradient-circle-tr svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Bottom-Left Decorative Gradient Circle */
+.projects-gradient-circle-bl {
+  position: absolute;
+  left: calc((100% - 1240px) / 2 - 140px);
+  bottom: -110px;
+  width: 440px;
+  height: 440px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.projects-gradient-circle-bl svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 /* Header Wrap */
 .projects-header-wrap {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
   position: relative;
+  z-index: 2;
 }
 
 .projects-header-left {
@@ -3819,7 +3854,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 
 .script-text {
@@ -3836,27 +3871,18 @@ h1, h2, h3, h4, h5, h6 {
   width: 85px;
 }
 
-/* Right CTA Button & Background Arc */
+/* Right CTA Button */
 .projects-header-right {
   position: relative;
   display: flex;
   align-items: center;
   padding-right: 10px;
-}
-
-.projects-decor-arc {
-  position: absolute;
-  right: -30px;
-  top: -85px;
-  width: 240px;
-  height: 240px;
-  pointer-events: none;
-  z-index: 1;
+  z-index: 3;
 }
 
 .projects-cta-btn {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   background: #061d3c;
   color: #ffffff;
   font-family: var(--font-heading);
@@ -3898,7 +3924,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(3px);
 }
 
-/* 4-Column Project Gallery Grid */
+/* 4-Column Native HTML/CSS Projects Cards (Ultra-Crisp, High-Resolution Assets) */
 .projects-gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -3908,38 +3934,214 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
 }
 
-.project-card-item {
+.project-card-box {
   position: relative;
-  border-radius: 24px;
+  height: 470px;
+  border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(6, 29, 60, 0.09);
+  box-shadow: 0 12px 32px rgba(6, 29, 60, 0.12);
+  background-color: #061d3c;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  background: #061d3c;
-}
-
-.project-card-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 42px rgba(6, 29, 60, 0.18), 0 8px 24px rgba(251, 163, 17, 0.25);
-}
-
-.project-card-link {
-  display: block;
-  width: 100%;
-  height: 100%;
   text-decoration: none;
-  position: relative;
 }
 
-.project-card-img {
+.project-card-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 42px rgba(6, 29, 60, 0.22), 0 8px 24px rgba(251, 163, 17, 0.2);
+}
+
+/* Top golden border accent line */
+.project-card-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #fba311 0%, rgba(251, 163, 17, 0.3) 100%);
+  z-index: 5;
+}
+
+/* Bottom-right golden corner wedge accent */
+.project-corner-wedge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: #fba311;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  border-bottom-right-radius: 22px;
+  z-index: 5;
+  pointer-events: none;
+  transition: transform 0.35s ease;
+}
+
+.project-card-box:hover .project-corner-wedge {
+  transform: scale(1.1);
+}
+
+/* Background Photo with Gradient Fade */
+.project-card-bg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
+  z-index: 1;
   transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.project-card-item:hover .project-card-img {
-  transform: scale(1.05);
+.project-card-box:nth-child(1) .project-card-bg {
+  object-position: 65% 15%;
+}
+.project-card-box:nth-child(2) .project-card-bg {
+  object-position: 50% 15%;
+}
+.project-card-box:nth-child(3) .project-card-bg {
+  object-position: 50% 10%;
+}
+.project-card-box:nth-child(4) .project-card-bg {
+  object-position: 68% 15%;
+}
+
+.project-card-box:hover .project-card-bg {
+  transform: scale(1.06);
+}
+
+/* Deep Navy Gradient Overlay: transparent top -> rich solid navy bottom */
+.project-card-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 29, 60, 0.05) 0%,
+    rgba(6, 29, 60, 0.15) 30%,
+    rgba(6, 29, 60, 0.75) 58%,
+    #061d3c 82%,
+    #061d3c 100%
+  );
+  z-index: 2;
+}
+
+/* Top Badges Row */
+.project-card-top {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 0;
+}
+
+.project-category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #fba311;
+  color: #061d3c;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.project-category-pill i {
+  font-size: 0.75rem;
+}
+
+.project-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(6, 29, 60, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Bottom Info Content */
+.project-card-bottom {
+  position: relative;
+  z-index: 4;
+  padding: 0 20px 22px 20px;
+}
+
+.project-gold-dash {
+  width: 22px;
+  height: 3px;
+  background: #fba311;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.project-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.2px;
+}
+
+.project-card-desc {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #94a3b8;
+  margin: 0 0 16px 0;
+  max-width: 230px;
+}
+
+.project-card-action {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.project-action-disc {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fba311;
+  color: #061d3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.project-card-box:hover .project-action-disc {
+  transform: translateX(3px);
+}
+
+.project-action-label {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fba311;
+  white-space: nowrap;
+}
+
+.project-action-line {
+  width: 48px;
+  height: 1px;
+  background: rgba(251, 163, 17, 0.35);
+  margin-left: 2px;
 }
 
 /* Bottom Trust Badges Strip */
