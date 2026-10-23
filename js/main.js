@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll);
   handleScroll();
 
+  // ==========================================================================
   // 2. Hero Slider Implementation (Continuous Auto-Slideable Banner)
+  // ==========================================================================
   const slides = document.querySelectorAll('.hero-slider-section .slide');
   const dots = document.querySelectorAll('.slider-dot');
   const prevBtn = document.querySelector('.slider-prev');
@@ -49,11 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
       // Re-trigger Craft Combine text reveal on active slide
       const slideTexts = slide.querySelectorAll('.cc-text-reveal, .cc-fade-reveal');
       if (isActive) {
+        slide.classList.remove('is-inview');
         slideTexts.forEach(el => el.classList.remove('is-inview'));
         requestAnimationFrame(() => {
-          slideTexts.forEach(el => el.classList.add('is-inview'));
+          requestAnimationFrame(() => {
+            slide.classList.add('is-inview');
+            slideTexts.forEach(el => el.classList.add('is-inview'));
+          });
         });
       } else {
+        slide.classList.remove('is-inview');
         slideTexts.forEach(el => el.classList.remove('is-inview'));
       }
     });
@@ -76,6 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function stopSlideTimer() {
     if (slideInterval) clearInterval(slideInterval);
   }
+
+  // Initialize Craft Combine animations for all headings and hero slides
+  initCraftCombineTextAnimations();
 
   if (slides.length > 0) {
     if (nextBtn) {
@@ -120,7 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }, { passive: true });
     }
 
-    // Auto-slide starts immediately
+    // Play entrance animation for slide 1 and begin auto-slide timer
+    showSlide(0);
     startSlideTimer();
   }
 
@@ -171,10 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
           const timer = setInterval(() => {
             start += Math.ceil(target / 80);
             if (start >= target) {
-              counter.innerText = target + suffix;
+              counter.innerHTML = `<span class="counter-num">${target}</span><span class="counter-suffix">${suffix}</span>`;
               clearInterval(timer);
             } else {
-              counter.innerText = start + suffix;
+              counter.innerHTML = `<span class="counter-num">${start}</span><span class="counter-suffix">${suffix}</span>`;
             }
           }, stepTime);
         }
@@ -187,9 +198,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Craft Combine Style (craftcombine.org) Scroll-Triggered Text Animation System
   function initCraftCombineTextAnimations() {
-    // Select all target titles across the website
+    // Select all target titles across the website (including hero slider titles)
     const targetHeadings = document.querySelectorAll(
-      '.cc-text-reveal, .main-title, .split-ref-title, .split-title, .slide-title, .who-title, .feature-title, .section-header .main-title'
+      '.cc-text-reveal, .main-title, .split-ref-title, .split-title, .who-title, .feature-title, .section-header .main-title, .slide-title'
     );
 
     targetHeadings.forEach(el => {
@@ -205,6 +216,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const childNodes = Array.from(el.childNodes);
       el.innerHTML = '';
       let wordIndex = 0;
+      const isHeroSlide = !!el.closest('.hero-slider-section');
+      const baseDelay = isHeroSlide ? 0.12 : 0;
 
       childNodes.forEach(node => {
         if (node.nodeType === Node.TEXT_NODE) {
@@ -218,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
             wordSpan.className = 'cc-word';
             wordSpan.textContent = word;
             // Craft Combine stagger delay per word: 0.065s
-            const delay = (wordIndex * 0.065).toFixed(3);
+            const delay = (baseDelay + wordIndex * 0.065).toFixed(3);
             wordSpan.style.setProperty('--cc-delay', `${delay}s`);
             wordIndex++;
 
@@ -238,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const clone = node.cloneNode(false);
             clone.className = (node.className ? node.className + ' ' : '') + 'cc-word';
             clone.textContent = word;
-            const delay = (wordIndex * 0.065).toFixed(3);
+            const delay = (baseDelay + wordIndex * 0.065).toFixed(3);
             clone.style.setProperty('--cc-delay', `${delay}s`);
             wordIndex++;
 
@@ -252,16 +265,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Subtitles, badges, and kickers receive smooth spring fade-up
     const fadeTargets = document.querySelectorAll(
-      '.sub-title, .split-sub-title, .split-pill, .slide-badge, .clients-badge, .projects-sub-badge, .cc-fade-reveal'
+      '.sub-title, .split-sub-title, .split-pill, .clients-badge, .projects-sub-badge, .cc-fade-reveal, .why-sub-badge, .why-main-title, .why-script-flourish, .hero-slider-section .slide-badge, .hero-slider-section .slide-text, .hero-slider-section .slide-actions'
     );
     fadeTargets.forEach(el => {
       el.classList.add('cc-fade-reveal');
+      if (el.classList.contains('slide-badge') || el.classList.contains('why-sub-badge') || el.classList.contains('process-sub-badge')) {
+        el.style.setProperty('--cc-delay', '0.05s');
+      } else if (el.classList.contains('why-main-title') || el.classList.contains('process-main-title')) {
+        el.style.setProperty('--cc-delay', '0.18s');
+      } else if (el.classList.contains('why-script-flourish')) {
+        el.style.setProperty('--cc-delay', '0.32s');
+      } else if (el.classList.contains('slide-text')) {
+        el.style.setProperty('--cc-delay', '0.36s');
+      } else if (el.classList.contains('slide-actions')) {
+        el.style.setProperty('--cc-delay', '0.50s');
+      }
     });
 
     // IntersectionObserver triggers animation on scroll
     const scrollObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-        // Exclude elements inside hero slides (controlled by slider)
+        // Exclude elements inside hero slides (controlled by banner slider)
         if (entry.target.closest('.hero-slider-section')) return;
 
         if (entry.isIntersecting) {
@@ -279,17 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollObserver.observe(el);
       }
     });
-
-    // Initial activation for the first hero slide
-    const activeSlide = document.querySelector('.hero-slider-section .slide.active');
-    if (activeSlide) {
-      activeSlide.querySelectorAll('.cc-text-reveal, .cc-fade-reveal').forEach(el => {
-        el.classList.add('is-inview');
-      });
-    }
   }
-
-  initCraftCombineTextAnimations();
 
   // 8. Testimonials Interactive Slider (Touch, Arrows, Dynamic Dots & Auto-Play)
   function initTestimonialSlider() {
@@ -473,10 +487,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (bookingForm && bookingSuccessBox) {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const submitBtn = bookingForm.querySelector('.booking-submit-btn');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<span>Processing...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
-      submitBtn.disabled = true;
+      const submitBtn = bookingForm.querySelector('.booking-submit-btn, .bb-submit-btn');
+      const originalText = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.innerHTML = '<span>Processing...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+        submitBtn.disabled = true;
+      }
 
       setTimeout(() => {
         bookingForm.style.display = 'none';

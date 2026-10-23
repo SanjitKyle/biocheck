@@ -11,14 +11,14 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Open+Sans:wght@400;500;600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 Icons CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=3.5">
-  <link rel="stylesheet" href="css/responsive.css?v=3.5">
+  <link rel="stylesheet" href="css/style.css?v=7.3">
+  <link rel="stylesheet" href="css/responsive.css?v=7.3">
 </head>
 <body>
 
@@ -178,7 +178,7 @@
   </aside>
 
   <!-- ==========================================================================
-       HERO SLIDER SECTION
+       HERO SLIDER SECTION (Original Auto-Sliding Banner)
        ========================================================================== -->
   <section id="hero" class="hero-slider-section">
     <div class="slider-container">
@@ -273,135 +273,145 @@
   </section>
 
   <!-- ==========================================================================
-       FEATURE STRIP (MODERN HIGHLIGHT CARDS)
+       BOOKING BANNER SECTION (100% MATCHED DESIGN UNDER BANNER)
        ========================================================================== -->
-  <section class="feature-strip-section">
+  <section class="booking-banner-section" id="bookingCard">
     <div class="container">
-      <div class="feature-strip-grid">
-        <!-- Feature 1: Free Evaluation -->
-        <div class="feature-box feature-box-modern">
-          <div class="feature-card-glow"></div>
-          <div class="feature-box-top">
-            <span class="feature-pill"><i class="fa-solid fa-sparkles"></i> Free Services</span>
-            <div class="feature-icon-box">
-              <i class="fa-solid fa-clipboard-check"></i>
-            </div>
+      <div class="booking-banner-card">
+        
+        <!-- Left Column: Cleaner Photo with Golden Curve Arc -->
+        <div class="booking-banner-media">
+          <img src="assets/images/cleaner-table-hd.jpg" alt="Professional Cleaner" class="booking-banner-cleaner-img">
+          <div class="booking-banner-curve" aria-hidden="true">
+            <svg viewBox="0 0 100 400" preserveAspectRatio="none">
+              <defs>
+                <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#fba311" flood-opacity="0.65"/>
+                </filter>
+              </defs>
+              <path d="M 100,0 L 45,0 C -5,120 -5,280 45,400 L 100,400 Z" fill="#031733" />
+              <path d="M 45,0 C -5,120 -5,280 45,400" fill="none" stroke="#fba311" stroke-width="7" stroke-linecap="round" filter="url(#goldGlow)" />
+            </svg>
           </div>
-          <h3 class="feature-title">Free Evaluation Of Your Cleaning Needs</h3>
-          <p class="feature-desc">Get an accurate and customized cleaning estimate tailored to your exact property, timeline, and schedule.</p>
-          <div class="feature-perks">
-            <span class="perk-badge"><i class="fa-solid fa-check"></i> 100% Free Quote</span>
-            <span class="perk-badge"><i class="fa-solid fa-check"></i> No Obligation</span>
-          </div>
-          <a href="#services" class="feature-action-btn">
-            <span>Read More</span>
-            <span class="action-circle"><i class="fa-solid fa-arrow-right"></i></span>
-          </a>
         </div>
 
-        <!-- Feature 2: Center Hero Dark Card (Interactive Quick Booking Form) -->
-        <div class="feature-box feature-box-highlight feature-box-modern feature-box-booking" id="bookingCard">
-          <div class="feature-card-glow-gold"></div>
+        <!-- Middle Column: Value Proposition & Features -->
+        <div class="booking-banner-content">
+          <span class="bb-kicker">GET A CLEANER, HEALTHIER SPACE</span>
+          <h2 class="bb-title">Professional Cleaning<br>Services, Tailored to You</h2>
+          <p class="bb-desc">Choose your service, tell us your preferred date and time, and we'll take care of the rest. It's quick, easy and completely hassle-free.</p>
           
-          <div class="feature-box-top">
-            <span class="feature-pill feature-pill-gold"><i class="fa-solid fa-calendar-check"></i> Book Now</span>
-            <div class="feature-icon-box feature-icon-gold">
-              <i class="fa-solid fa-bolt"></i>
+          <div class="bb-features-list">
+            <div class="bb-feature-item">
+              <span class="bb-feature-circle"><i class="fa-solid fa-user"></i></span>
+              <span class="bb-feature-text">Trained &amp; Vetted Cleaners</span>
+            </div>
+            <div class="bb-feature-item">
+              <span class="bb-feature-circle"><i class="fa-solid fa-shield-halved"></i></span>
+              <span class="bb-feature-text">Fully Insured</span>
+            </div>
+            <div class="bb-feature-item">
+              <span class="bb-feature-circle"><i class="fa-regular fa-calendar-days"></i></span>
+              <span class="bb-feature-text">Flexible Scheduling</span>
+            </div>
+            <div class="bb-feature-item">
+              <span class="bb-feature-circle"><i class="fa-solid fa-circle-check"></i></span>
+              <span class="bb-feature-text">100% Satisfaction Guarantee</span>
             </div>
           </div>
+        </div>
 
-          <div class="booking-header-text">
-            <h3 class="booking-card-title">Book A Cleaning Pro</h3>
-            <p class="booking-card-subtitle">Instant online scheduling & 100% satisfaction guarantee.</p>
-          </div>
-
-          <form class="quick-booking-form" id="quickBookingForm">
-            <!-- Service Selection -->
-            <div class="booking-field-group">
-              <span class="booking-field-icon"><i class="fa-solid fa-broom"></i></span>
-              <select class="booking-field-select" required name="service" aria-label="Select Cleaning Service">
-                <option value="" disabled selected>Select Cleaning Service</option>
-                <option value="commercial">Commercial Office Cleaning</option>
-                <option value="residential">Residential Home Cleaning</option>
-                <option value="carpet">Carpet & Floor Deep Clean</option>
-                <option value="window">Window Glass Cleaning</option>
-                <option value="deep">Deep Sanitization Clean</option>
-              </select>
-            </div>
-
-            <!-- Two-column: Name & Phone -->
-            <div class="booking-field-row">
-              <div class="booking-field-group">
-                <span class="booking-field-icon"><i class="fa-solid fa-user"></i></span>
-                <input type="text" class="booking-field-input" placeholder="Your Name" required name="name" aria-label="Your Name">
+        <!-- Right Column: Quick Booking Form Card -->
+        <div class="booking-banner-form-col">
+          <div class="bb-form-card">
+            
+            <!-- Header with Calendar Icon -->
+            <div class="bb-form-header">
+              <div class="bb-form-icon">
+                <i class="fa-solid fa-calendar-days"></i>
               </div>
-              <div class="booking-field-group">
-                <span class="booking-field-icon"><i class="fa-solid fa-phone"></i></span>
-                <input type="tel" class="booking-field-input" placeholder="Phone Number" required name="phone" aria-label="Phone Number">
+              <div class="bb-form-header-text">
+                <h3 class="bb-form-title">Book Your Cleaning Service</h3>
+                <p class="bb-form-subtitle">Fill in the details below and we'll confirm your appointment shortly.</p>
               </div>
             </div>
 
-            <!-- Two-column: Date & Time -->
-            <div class="booking-field-row">
-              <div class="booking-field-group">
-                <span class="booking-field-icon"><i class="fa-solid fa-calendar-day"></i></span>
-                <input type="date" class="booking-field-input booking-field-date" required name="date" aria-label="Booking Date">
-              </div>
-              <div class="booking-field-group">
-                <span class="booking-field-icon"><i class="fa-solid fa-clock"></i></span>
-                <select class="booking-field-select" required name="time" aria-label="Preferred Time">
-                  <option value="" disabled selected>Preferred Time</option>
-                  <option value="morning">Morning (8am - 12pm)</option>
-                  <option value="afternoon">Afternoon (12pm - 4pm)</option>
-                  <option value="evening">Evening (4pm - 8pm)</option>
+            <!-- Form -->
+            <form class="bb-booking-form" id="quickBookingForm">
+              <!-- Service Selector -->
+              <div class="bb-field-group bb-field-full">
+                <span class="bb-field-icon"><i class="fa-solid fa-broom"></i></span>
+                <select class="bb-select" required name="service" aria-label="Select Cleaning Service">
+                  <option value="" disabled selected>Select Cleaning Service</option>
+                  <option value="commercial">Commercial Office Cleaning</option>
+                  <option value="residential">Residential Home Cleaning</option>
+                  <option value="carpet">Carpet &amp; Floor Deep Clean</option>
+                  <option value="window">Window Glass Cleaning</option>
+                  <option value="deep">Deep Sanitization Clean</option>
                 </select>
+                <span class="bb-field-chevron"><i class="fa-solid fa-chevron-down"></i></span>
               </div>
+
+              <!-- Name & Phone -->
+              <div class="bb-field-row">
+                <div class="bb-field-group">
+                  <span class="bb-field-icon"><i class="fa-solid fa-user"></i></span>
+                  <input type="text" class="bb-input" placeholder="Your Name" required name="name" aria-label="Your Name">
+                </div>
+                <div class="bb-field-group">
+                  <span class="bb-field-icon"><i class="fa-solid fa-phone"></i></span>
+                  <input type="tel" class="bb-input" placeholder="Phone Number" required name="phone" aria-label="Phone Number">
+                </div>
+              </div>
+
+              <!-- Date & Time -->
+              <div class="bb-field-row">
+                <div class="bb-field-group">
+                  <span class="bb-field-icon"><i class="fa-regular fa-calendar-days"></i></span>
+                  <input type="text" class="bb-input bb-date-input" placeholder="Preferred Date" onfocus="(this.type='date')" onblur="if(!this.value)(this.type='text')" required name="date" aria-label="Preferred Date">
+                  <span class="bb-field-right-icon"><i class="fa-regular fa-calendar"></i></span>
+                </div>
+                <div class="bb-field-group">
+                  <span class="bb-field-icon"><i class="fa-solid fa-clock"></i></span>
+                  <select class="bb-select" required name="time" aria-label="Preferred Time">
+                    <option value="" disabled selected>Preferred Time</option>
+                    <option value="morning">Morning (8am - 12pm)</option>
+                    <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                    <option value="evening">Evening (4pm - 8pm)</option>
+                  </select>
+                  <span class="bb-field-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                </div>
+              </div>
+
+              <!-- CTA Submit Button -->
+              <button type="submit" class="bb-submit-btn">
+                <span>BOOK APPOINTMENT NOW</span>
+                <span class="bb-submit-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </button>
+            </form>
+
+            <!-- Success Alert Box (Hidden Initially) -->
+            <div class="bb-success-box" id="bookingSuccessBox" style="display: none;">
+              <div class="bb-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+              <h4>Booking Request Sent!</h4>
+              <p>Thank you! Our dispatcher will call you shortly to confirm your slot.</p>
+              <button type="button" class="bb-reset-btn" id="bookingResetBtn">Book Another Service</button>
             </div>
 
-            <!-- Submit Button -->
-            <button type="submit" class="booking-submit-btn">
-              <span>Book Appointment Now</span>
-              <span class="submit-circle"><i class="fa-solid fa-arrow-right"></i></span>
-            </button>
-          </form>
+            <!-- Trust Micro-Badges -->
+            <div class="bb-trust-row">
+              <span class="bb-trust-item"><i class="fa-solid fa-shield-halved"></i> No Obligation</span>
+              <span class="bb-trust-item"><i class="fa-solid fa-clock"></i> Fast Response</span>
+              <span class="bb-trust-item"><i class="fa-solid fa-headset"></i> Our Team Will Confirm</span>
+            </div>
 
-          <!-- Success Feedback Card -->
-          <div class="booking-success-box" id="bookingSuccessBox" style="display: none;">
-            <div class="booking-success-icon"><i class="fa-solid fa-circle-check"></i></div>
-            <h4>Booking Request Sent!</h4>
-            <p>Thank you! Our dispatcher will call you shortly to confirm your slot.</p>
-            <button type="button" class="booking-reset-btn" id="bookingResetBtn">Book Another Service</button>
-          </div>
-
-          <div class="booking-micro-trust">
-            <span><i class="fa-solid fa-shield-halved"></i> 100% Guaranteed</span>
-            <span><i class="fa-solid fa-bolt"></i> Fast 15-Min Callback</span>
           </div>
         </div>
 
-        <!-- Feature 3: Fast Response / Easy Booking -->
-        <div class="feature-box feature-box-modern">
-          <div class="feature-card-glow"></div>
-          <div class="feature-box-top">
-            <span class="feature-pill"><i class="fa-solid fa-bolt"></i> Fast Response</span>
-            <div class="feature-icon-box">
-              <i class="fa-solid fa-calendar-days"></i>
-            </div>
-          </div>
-          <h3 class="feature-title">Easy Booking & Fast Communication</h3>
-          <p class="feature-desc">Seamless appointment scheduling, verified technicians, and transparent real-time updates directly to your phone.</p>
-          <div class="feature-perks">
-            <span class="perk-badge"><i class="fa-solid fa-check"></i> Instant Confirmation</span>
-            <span class="perk-badge"><i class="fa-solid fa-check"></i> 24/7 Support</span>
-          </div>
-          <a href="#bookingCard" class="feature-action-btn">
-            <span>Book Now</span>
-            <span class="action-circle"><i class="fa-solid fa-arrow-right"></i></span>
-          </a>
-        </div>
       </div>
     </div>
   </section>
+
 
   <!-- ==========================================================================
        SPECIALIZING IN ALL ASPECTS (SPLIT SCREEN SHOWCASE - SERVICES)
@@ -436,685 +446,336 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
-       WHY CHOOSE US (INTERACTIVE TABS: MISSION / VISION / PHILOSOPHY)
+    <!-- ==========================================================================
+       WHY CHOOSE US (100% MATCHED TO REFERENCE DESIGN)
        ========================================================================== -->
-  <style>
-    /* Why Choose Us - Ultra-Modern & Attractive Redesign */
-    .why-choose-tabbed-section {
-      position: relative;
-      background: linear-gradient(180deg, #edf3fa 0%, #f4f7fb 100%) !important;
-      padding: 105px 0 115px !important;
-      overflow: hidden;
-      color: #001837;
-      border-top: 1px solid rgba(0, 24, 55, 0.05);
-      border-bottom: 1px solid rgba(0, 24, 55, 0.05);
-    }
-
-    .why-header {
-      position: relative;
-      z-index: 2;
-      margin-bottom: 38px;
-    }
-
-    .why-sub-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(251, 163, 17, 0.12) !important;
-      color: #001837 !important;
-      border: 1px solid rgba(251, 163, 17, 0.35);
-      padding: 7px 18px;
-      border-radius: 50px;
-      font-family: var(--font-heading, 'Quicksand', sans-serif);
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 14px;
-    }
-
-    .why-sub-badge i {
-      color: #fba311;
-      font-size: 0.95rem;
-    }
-
-    .why-main-title {
-      font-family: var(--font-heading, 'Quicksand', sans-serif);
-      font-size: 2.75rem;
-      font-weight: 700;
-      color: #001837 !important;
-      line-height: 1.22;
-      max-width: 860px;
-      letter-spacing: -0.5px;
-    }
-
-    /* Tabs Navigation Bar (Modern Elevated Segmented Cards) */
-    .why-tabs-nav {
-      display: grid !important;
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 20px !important;
-      margin-bottom: 28px !important;
-      position: relative;
-      z-index: 2;
-      width: 100%;
-    }
-
-    .why-tab-btn {
-      width: 100%;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-      gap: 16px !important;
-      padding: 22px 24px !important;
-      border: 2px solid #e9eef5 !important;
-      border-radius: 16px !important;
-      outline: none;
-      cursor: pointer;
-      background: #ffffff !important;
-      box-shadow: 0 4px 18px rgba(0, 24, 55, 0.04) !important;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-      text-align: left !important;
-    }
-
-    .why-tab-btn .tab-btn-icon {
-      width: 52px !important;
-      height: 52px !important;
-      border-radius: 14px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      font-size: 1.35rem !important;
-      background: rgba(251, 163, 17, 0.12) !important;
-      color: #fba311 !important;
-      flex-shrink: 0;
-      transition: all 0.3s ease;
-    }
-
-    .why-tab-btn .tab-btn-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-    }
-
-    .why-tab-btn .tab-btn-kicker {
-      font-family: var(--font-heading, 'Quicksand', sans-serif);
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: #8899a6;
-      margin-bottom: 3px;
-      transition: color 0.3s ease;
-    }
-
-    .why-tab-btn .tab-btn-text {
-      font-family: var(--font-heading, 'Quicksand', sans-serif);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #001837;
-      line-height: 1.2;
-      margin-bottom: 3px;
-      transition: color 0.3s ease;
-    }
-
-    .why-tab-btn .tab-btn-sub {
-      font-size: 0.82rem;
-      color: #6a7c8e;
-      font-weight: 500;
-      line-height: 1.3;
-      transition: color 0.3s ease;
-    }
-
-    .why-tab-btn:hover {
-      border-color: #fba311 !important;
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0, 24, 55, 0.08) !important;
-      background: #ffffff !important;
-    }
-
-    .why-tab-btn:hover .tab-btn-icon {
-      background: #fba311 !important;
-      color: #001837 !important;
-      transform: scale(1.08) rotate(6deg);
-    }
-
-    .why-tab-btn:hover .tab-btn-kicker {
-      color: #fba311;
-    }
-
-    /* Active State (Signature Luxury Deep Navy Card with Gold Accents) */
-    .why-tab-btn.active {
-      background: linear-gradient(135deg, #001837 0%, #062752 100%) !important;
-      border-color: #001837 !important;
-      box-shadow: 0 14px 34px rgba(0, 24, 55, 0.18) !important;
-      transform: translateY(-2px);
-    }
-
-    .why-tab-btn.active .tab-btn-icon {
-      background: #fba311 !important;
-      color: #001837 !important;
-      box-shadow: 0 6px 16px rgba(251, 163, 17, 0.4);
-    }
-
-    .why-tab-btn.active .tab-btn-kicker {
-      color: #fba311 !important;
-    }
-
-    .why-tab-btn.active .tab-btn-text {
-      color: #ffffff !important;
-    }
-
-    .why-tab-btn.active .tab-btn-sub {
-      color: rgba(255, 255, 255, 0.75) !important;
-    }
-
-    .why-tab-btn.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 3.5px;
-      background: linear-gradient(90deg, #fba311, #ffd278);
-    }
-
-    /* Tab Panels Container (Elevated Modern Showcase Card) */
-    .why-tab-panels-wrapper {
-      position: relative;
-      background: #ffffff !important;
-      border: 1.5px solid #e9eef5 !important;
-      border-radius: 22px !important;
-      box-shadow: 0 22px 60px rgba(0, 24, 55, 0.07) !important;
-      overflow: hidden;
-      z-index: 2;
-    }
-
-    .why-tab-panel {
-      display: none;
-      opacity: 0;
-    }
-
-    .why-tab-panel.active {
-      display: block;
-      opacity: 1;
-      animation: whyTabFade 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    }
-
-    @keyframes whyTabFade {
-      0% { opacity: 0; transform: translateY(14px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .why-panel-grid {
-      display: grid !important;
-      grid-template-columns: 1fr 1.08fr !important;
-      min-height: 520px;
-    }
-
-    .why-panel-media {
-      position: relative;
-      overflow: hidden;
-      background: #f4f7fb;
-      min-height: 520px;
-    }
-
-    .why-panel-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-
-    .why-panel-grid:hover .why-panel-media img {
-      transform: scale(1.04);
-    }
-
-    /* Floating Quality Badge over Media */
-    .why-media-badge {
-      position: absolute;
-      bottom: 24px;
-      left: 24px;
-      background: rgba(0, 24, 55, 0.88);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: #ffffff;
-      padding: 12px 20px;
-      border-radius: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      font-family: var(--font-heading, 'Quicksand', sans-serif);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      z-index: 2;
-    }
-
-    .media-badge-stars {
-      display: flex;
-      gap: 3px;
-      color: #fba311;
-      font-size: 0.8rem;
-    }
-
-    .media-badge-label {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #ffffff;
-    }
-
-    .why-panel-body {
-      padding: 54px 58px !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center !important;
-      background: #ffffff !important;
-    }
-
-    .why-panel-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-heading, 'Quicksand', sans-serif);
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: #fba311;
-      margin-bottom: 12px;
-    }
-
-    .why-panel-title {
-      font-family: var(--font-heading, 'Quicksand', sans-serif);
-      font-size: 2.15rem !important;
-      font-weight: 700 !important;
-      color: #001837 !important;
-      line-height: 1.25 !important;
-      margin-bottom: 6px !important;
-    }
-
-    /* Modern Dual-Accent Underline */
-    .why-title-accent {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin: 12px 0 22px;
-    }
-
-    .why-title-accent .accent-bar {
-      width: 48px;
-      height: 3.5px;
-      background: #fba311;
-      border-radius: 2px;
-    }
-
-    .why-title-accent .accent-dot {
-      width: 6px;
-      height: 3.5px;
-      background: #fba311;
-      border-radius: 2px;
-    }
-
-    .why-panel-desc {
-      font-size: 1.02rem !important;
-      color: #4b5d6e !important;
-      line-height: 1.76 !important;
-      margin-bottom: 24px !important;
-    }
-
-    /* Elevated Modern Checklist Cards */
-    .why-checklist {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 12px !important;
-      margin-bottom: 32px !important;
-    }
-
-    .why-check-item {
-      background: #f8fafc !important;
-      border: 1.5px solid #edf2f7 !important;
-      border-radius: 12px !important;
-      padding: 14px 18px !important;
-      display: flex !important;
-      align-items: flex-start !important;
-      gap: 14px !important;
-      transition: all 0.3s ease !important;
-    }
-
-    .why-check-item:hover {
-      background: #ffffff !important;
-      border-color: rgba(251, 163, 17, 0.5) !important;
-      transform: translateX(5px) !important;
-      box-shadow: 0 6px 20px rgba(0, 24, 55, 0.06) !important;
-    }
-
-    .why-check-icon {
-      width: 26px !important;
-      height: 26px !important;
-      border-radius: 50% !important;
-      background: #fba311 !important;
-      color: #001837 !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      font-size: 0.85rem !important;
-      font-weight: 800 !important;
-      flex-shrink: 0 !important;
-      margin-top: 2px !important;
-    }
-
-    .why-check-info strong {
-      display: block !important;
-      font-size: 0.98rem !important;
-      color: #001837 !important;
-      font-weight: 700 !important;
-      margin-bottom: 2px !important;
-    }
-
-    .why-check-info span {
-      display: block !important;
-      font-size: 0.88rem !important;
-      color: #627282 !important;
-      line-height: 1.45 !important;
-    }
-
-    /* Action Row */
-    .why-action-row {
-      display: flex !important;
-      align-items: center !important;
-      gap: 26px !important;
-      flex-wrap: wrap !important;
-    }
-
-    .why-panel-btn {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 10px !important;
-      background: #001837 !important;
-      color: #ffffff !important;
-      padding: 15px 32px !important;
-      border-radius: 8px !important;
-      font-family: var(--font-heading, 'Quicksand', sans-serif);
-      font-size: 0.95rem !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.5px !important;
-      text-decoration: none !important;
-      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
-      box-shadow: 0 6px 18px rgba(0, 24, 55, 0.18) !important;
-    }
-
-    .why-panel-btn i {
-      font-size: 0.95rem;
-      transition: transform 0.3s ease;
-    }
-
-    .why-panel-btn:hover {
-      background: #fba311 !important;
-      color: #001837 !important;
-      transform: translateY(-2px) !important;
-      box-shadow: 0 10px 24px rgba(251, 163, 17, 0.4) !important;
-    }
-
-    .why-panel-btn:hover i {
-      transform: translateX(4px);
-    }
-
-    /* Quick Hotline Callout */
-    .why-phone-hotline {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 12px !important;
-      text-decoration: none !important;
-      color: #001837 !important;
-      transition: transform 0.3s ease;
-    }
-
-    .why-phone-hotline:hover {
-      transform: translateX(3px);
-    }
-
-    .why-phone-hotline .hotline-icon {
-      width: 44px !important;
-      height: 44px !important;
-      border-radius: 50% !important;
-      background: rgba(251, 163, 17, 0.15) !important;
-      color: #fba311 !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      font-size: 1.1rem !important;
-    }
-
-    .why-phone-hotline .hotline-text small {
-      display: block !important;
-      font-size: 0.75rem !important;
-      text-transform: uppercase !important;
-      letter-spacing: 1px !important;
-      color: #7b8b9a !important;
-      font-weight: 600 !important;
-    }
-
-    .why-phone-hotline .hotline-text strong {
-      display: block !important;
-      font-size: 1rem !important;
-      color: #001837 !important;
-      font-family: var(--font-heading, 'Quicksand', sans-serif);
-      font-weight: 700 !important;
-    }
-
-    @media (max-width: 991px) {
-      .why-panel-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .why-panel-media {
-        min-height: 340px !important;
-        height: 340px !important;
-      }
-      .why-panel-body {
-        padding: 40px 32px !important;
-      }
-      .why-tabs-nav {
-        gap: 12px !important;
-      }
-      .why-tab-btn {
-        padding: 16px 18px !important;
-        gap: 12px !important;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .why-tabs-nav {
-        grid-template-columns: 1fr !important;
-        gap: 12px !important;
-      }
-      .why-tab-btn {
-        padding: 14px 18px !important;
-      }
-      .why-panel-title {
-        font-size: 1.6rem !important;
-      }
-      .why-action-row {
-        gap: 18px !important;
-      }
-    }
-  </style>
   <section id="why-choose" class="why-choose-tabbed-section">
-    <!-- Ambient Sparkle Flourish in Top-Right -->
-    <div class="why-ambient-sparkle" aria-hidden="true">
-      <svg viewBox="0 0 100 100" class="why-sparkle-svg">
-        <path d="M50 0 C50 28 28 50 0 50 C28 50 50 72 50 100 C50 72 72 50 100 50 C72 50 50 28 50 0 Z" fill="rgba(0, 24, 55, 0.04)"/>
-      </svg>
-    </div>
-
     <div class="container">
-      <!-- Section Header -->
-      <div class="why-header">
-        <div class="why-sub-badge cc-fade-reveal">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-          <span>WHY CHOOSE US?</span>
+      
+      <!-- Section Header with Left Title and Right Script Flourish -->
+      <div class="why-header-wrapper">
+        <div class="why-header-left">
+          <div class="why-sub-badge cc-fade-reveal">
+            <i class="fa-solid fa-plane"></i>
+            <span>WE'RE CHOSEN &amp; TRUSTED</span>
+          </div>
+          <h2 class="why-main-title">
+            We Will Make Absolutely Any Place<br>
+            <span class="why-title-gold-group">
+              <span class="why-title-gold">Clean, </span>
+              <span class="why-title-gold why-title-squiggle-wrap">
+                Neat &amp; Tidy.
+                <svg class="why-title-squiggle" viewBox="0 0 170 14" fill="none" aria-hidden="true">
+                  <path d="M 3 8 C 50 2, 110 3, 167 9" stroke="#061d3c" stroke-width="3.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </span>
+          </h2>
         </div>
-        <h2 class="why-main-title cc-text-reveal">We Will Make Absolutely Any Place Clean, Neat & Tidy.</h2>
+
+        <div class="why-header-right">
+          <div class="why-script-flourish">
+            <span class="script-sparkle">✦</span>
+            <span class="script-text">Your Space,<br>Our Priority</span>
+            <svg class="script-swoosh" viewBox="0 0 110 16" fill="none" aria-hidden="true">
+              <path d="M 4 6 C 45 16, 75 14, 106 4" stroke="#fba311" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
       </div>
 
-      <!-- Tab Navigation Buttons (Modern Segmented Floating Cards) -->
+      <!-- Tab Navigation Buttons (3 Segmented Cards) -->
       <div class="why-tabs-nav" role="tablist" aria-label="Why Choose Us Tabs">
+        <!-- Tab 1: Our Mission (Active by Default) -->
         <button type="button" class="why-tab-btn active" role="tab" id="tab-mission" aria-selected="true" aria-controls="panel-mission" data-tab="panel-mission">
-          <span class="tab-btn-icon"><i class="fa-solid fa-bullseye"></i></span>
+          <span class="tab-btn-icon"><i class="fa-solid fa-broom"></i></span>
           <div class="tab-btn-content">
-            <span class="tab-btn-kicker">01 / GUARANTEE</span>
+            <span class="tab-btn-kicker">6+ YEARS EXPERIENCE</span>
             <span class="tab-btn-text">Our Mission</span>
-            <span class="tab-btn-sub">100% Satisfaction Guarantee</span>
+            <span class="tab-btn-sub">100% Satisfaction. Better Environment.</span>
           </div>
+          <span class="why-tab-arrow"><i class="fa-solid fa-arrow-right"></i></span>
         </button>
 
+        <!-- Tab 2: Our Vision -->
         <button type="button" class="why-tab-btn" role="tab" id="tab-vision" aria-selected="false" aria-controls="panel-vision" data-tab="panel-vision">
-          <span class="tab-btn-icon"><i class="fa-solid fa-mountain-sun"></i></span>
+          <span class="tab-btn-icon"><i class="fa-solid fa-user-group"></i></span>
           <div class="tab-btn-content">
-            <span class="tab-btn-kicker">02 / INNOVATION</span>
+            <span class="tab-btn-kicker">50+ DEDICATED STAFF</span>
             <span class="tab-btn-text">Our Vision</span>
-            <span class="tab-btn-sub">Smart Green Bio-Sanitization</span>
+            <span class="tab-btn-sub">To build a cleaner, healthier tomorrow.</span>
           </div>
+          <span class="why-tab-arrow"><i class="fa-solid fa-arrow-right"></i></span>
         </button>
 
+        <!-- Tab 3: Our Philosophy -->
         <button type="button" class="why-tab-btn" role="tab" id="tab-philosophy" aria-selected="false" aria-controls="panel-philosophy" data-tab="panel-philosophy">
-          <span class="tab-btn-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+          <span class="tab-btn-icon"><i class="fa-solid fa-gem"></i></span>
           <div class="tab-btn-content">
-            <span class="tab-btn-kicker">03 / INTEGRITY</span>
+            <span class="tab-btn-kicker">10+ YEARS OF TRUST</span>
             <span class="tab-btn-text">Our Philosophy</span>
-            <span class="tab-btn-sub">Honesty & Client-First Trust</span>
+            <span class="tab-btn-sub">Honesty &amp; Quality First, Always.</span>
           </div>
+          <span class="why-tab-arrow"><i class="fa-solid fa-arrow-right"></i></span>
         </button>
       </div>
 
       <!-- Tab Content Panels Wrapper (Elevated Showcase Card) -->
       <div class="why-tab-panels-wrapper">
+        
+        <!-- Decorative Bottom Dots Matrix -->
+        <div class="why-bottom-dots" aria-hidden="true"></div>
+
         <!-- Panel 1: Our Mission (Active by Default) -->
         <div class="why-tab-panel active" id="panel-mission" role="tabpanel" aria-labelledby="tab-mission">
           <div class="why-panel-grid">
-            <div class="why-panel-media">
-              <img src="assets/images/service-img-01-880x620.jpg" alt="Our Mission - Professional Deep Cleaning" loading="lazy">
-              <div class="why-media-badge">
-                <div class="media-badge-stars">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            
+            <!-- Left: Media Column with Accents -->
+            <div class="why-panel-media-wrap">
+              <div class="why-panel-media">
+                <!-- Top-Left Dot Matrix Pattern (6x5 Crisp SVG Grid) -->
+                <div class="why-media-dots" aria-hidden="true">
+                  <svg viewBox="0 0 76 58" fill="#0c2340">
+                    <circle cx="5" cy="5" r="2.5"/><circle cx="17" cy="5" r="2.5"/><circle cx="29" cy="5" r="2.5"/><circle cx="41" cy="5" r="2.5"/><circle cx="53" cy="5" r="2.5"/><circle cx="65" cy="5" r="2.5"/>
+                    <circle cx="5" cy="17" r="2.5"/><circle cx="17" cy="17" r="2.5"/><circle cx="29" cy="17" r="2.5"/><circle cx="41" cy="17" r="2.5"/><circle cx="53" cy="17" r="2.5"/><circle cx="65" cy="17" r="2.5"/>
+                    <circle cx="5" cy="29" r="2.5"/><circle cx="17" cy="29" r="2.5"/><circle cx="29" cy="29" r="2.5"/><circle cx="41" cy="29" r="2.5"/><circle cx="53" cy="29" r="2.5"/><circle cx="65" cy="29" r="2.5"/>
+                    <circle cx="5" cy="41" r="2.5"/><circle cx="17" cy="41" r="2.5"/><circle cx="29" cy="41" r="2.5"/><circle cx="41" cy="41" r="2.5"/><circle cx="53" cy="41" r="2.5"/><circle cx="65" cy="41" r="2.5"/>
+                    <circle cx="5" cy="53" r="2.5"/><circle cx="17" cy="53" r="2.5"/><circle cx="29" cy="53" r="2.5"/><circle cx="41" cy="53" r="2.5"/><circle cx="53" cy="53" r="2.5"/><circle cx="65" cy="53" r="2.5"/>
+                  </svg>
                 </div>
-                <span class="media-badge-label">100% Quality Guaranteed</span>
+                
+                <img src="assets/images/service-img-01-880x620.jpg" alt="Professional Cleaner" loading="lazy">
+                
+                <!-- Full-Height Right-Edge Golden Swoosh Ribbon -->
+                <div class="why-media-gold-curve" aria-hidden="true">
+                  <svg viewBox="0 0 50 600" preserveAspectRatio="none">
+                    <path d="M 45 0 C 45 140, 44 280, 41 380 C 37 460, 24 530, 8 600 L 50 600 L 50 0 Z" fill="#fba311"/>
+                    <path d="M 45 0 C 45 140, 44 280, 41 380 C 37 460, 24 530, 8 600" stroke="#fba311" stroke-width="4" stroke-linecap="round"/>
+                  </svg>
+                </div>
+
+                <!-- Floating Quality Badge over Media -->
+                <div class="why-floating-guarantee">
+                  <div class="badge-shield-circle">
+                    <i class="fa-solid fa-shield"></i>
+                  </div>
+                  <div class="badge-content">
+                    <div class="badge-stars">
+                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <strong class="badge-title">100% Quality Guaranteed</strong>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!-- Right: Body Column -->
             <div class="why-panel-body">
               <div class="why-panel-kicker">
                 <i class="fa-solid fa-shield-halved"></i>
                 <span>OUR CORE COMMITMENT</span>
               </div>
-              <h3 class="why-panel-title">Our Two-Part Satisfaction Guarantee!</h3>
-              <div class="why-title-accent">
-                <span class="accent-bar"></span>
-                <span class="accent-dot"></span>
+              
+              <h3 class="why-panel-title">
+                Our Two-Part Satisfaction<br>
+                <span class="why-title-accent-wrap">
+                  <span class="why-title-gold-text">Guarantee!</span>
+                  <svg class="why-guarantee-squiggle" viewBox="0 0 150 14" fill="none" aria-hidden="true">
+                    <path d="M 3 8 C 45 2, 95 3, 147 9" stroke="#fba311" stroke-width="3.5" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </h3>
+
+              <div class="why-desc-group">
+                <p class="why-desc-lead">We are dedicated to providing the highest standard of eco-friendly sanitization and spotless cleanliness for every home and business.</p>
+                <p class="why-desc-sub">If you are not completely satisfied with any area we've cleaned, we'll rectify it within 24 hours and we will re-clean it immediately at no additional cost.</p>
               </div>
-              <p class="why-panel-desc">
-                We are dedicated to providing the highest standard of eco-friendly sanitization and spotless cleanliness for every home and business. If you are not completely satisfied with any area we've cleaned, simply notify us within 24 hours and we will re-clean it immediately at no additional cost.
-              </p>
-              <div class="why-checklist">
-                <div class="why-check-item">
-                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
-                  <div class="why-check-info">
-                    <strong>Hospital-Grade Safe Sanitization</strong>
-                    <span>100% non-toxic, pet-safe, and biodegradable formulas.</span>
+
+              <!-- 3 Feature Strips -->
+              <div class="why-feature-strips">
+                <!-- Feature 1 -->
+                <div class="why-strip-card">
+                  <div class="why-strip-left">
+                    <div class="why-strip-icon-box">
+                      <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="why-strip-info">
+                      <strong class="why-strip-title">Hospital-Grade Safe Sanitization</strong>
+                      <span class="why-strip-sub">100% non-toxic, pet-safe, and biodegradable formulas.</span>
+                    </div>
+                  </div>
+                  <div class="why-strip-check">
+                    <i class="fa-solid fa-check"></i>
                   </div>
                 </div>
-                <div class="why-check-item">
-                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
-                  <div class="why-check-info">
-                    <strong>Vetted & Certified Cleaners</strong>
-                    <span>Rigorous background-checked specialists equipped with modern tools.</span>
+
+                <!-- Feature 2 -->
+                <div class="why-strip-card">
+                  <div class="why-strip-left">
+                    <div class="why-strip-icon-box">
+                      <i class="fa-solid fa-spray-can"></i>
+                    </div>
+                    <div class="why-strip-info">
+                      <strong class="why-strip-title">Vetted &amp; Certified Cleaners</strong>
+                      <span class="why-strip-sub">Background checked, trained and equipped with modern tools.</span>
+                    </div>
+                  </div>
+                  <div class="why-strip-check">
+                    <i class="fa-solid fa-check"></i>
                   </div>
                 </div>
-                <div class="why-check-item">
-                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
-                  <div class="why-check-info">
-                    <strong>Rapid 24-Hour Re-Clean Policy</strong>
-                    <span>Complete peace of mind with prompt, free re-cleans on demand.</span>
+
+                <!-- Feature 3 -->
+                <div class="why-strip-card">
+                  <div class="why-strip-left">
+                    <div class="why-strip-icon-box">
+                      <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="why-strip-info">
+                      <strong class="why-strip-title">Rapid 24-Hour Re-Clean Policy</strong>
+                      <span class="why-strip-sub">Complete peace of mind with prompt, free re-clean on demand.</span>
+                    </div>
+                  </div>
+                  <div class="why-strip-check">
+                    <i class="fa-solid fa-check"></i>
                   </div>
                 </div>
               </div>
+
+              <!-- Action Row: Button & Phone -->
               <div class="why-action-row">
-                <a href="#services" class="why-panel-btn">
+                <a href="#bookingCard" class="why-panel-btn">
                   <span>VIEW TERMS OF SERVICE</span>
-                  <i class="fa-solid fa-arrow-right"></i>
+                  <span class="why-btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
                 </a>
-                <a href="tel:+1212255511" class="why-phone-hotline">
-                  <span class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></span>
+                <div class="why-action-divider" aria-hidden="true"></div>
+                <a href="tel:+12722525711" class="why-phone-hotline">
+                  <span class="hotline-icon"><i class="fa-solid fa-phone"></i></span>
                   <div class="hotline-text">
-                    <small>Call Us Anytime</small>
-                    <strong>+1 (212) 255-511</strong>
+                    <small>CALL US ANYTIME</small>
+                    <strong>+1 (272) 252-5711</strong>
                   </div>
                 </a>
               </div>
             </div>
+
           </div>
         </div>
 
         <!-- Panel 2: Our Vision -->
         <div class="why-tab-panel" id="panel-vision" role="tabpanel" aria-labelledby="tab-vision">
           <div class="why-panel-grid">
-            <div class="why-panel-media">
-              <img src="assets/images/service-img-04-880x620.jpg" alt="Our Vision - Next Generation Sanitization" loading="lazy">
-              <div class="why-media-badge">
-                <div class="media-badge-stars">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="why-panel-media-wrap">
+              <div class="why-panel-media">
+                <div class="why-media-dots" aria-hidden="true">
+                  <svg viewBox="0 0 76 58" fill="#0c2340">
+                    <circle cx="5" cy="5" r="2.5"/><circle cx="17" cy="5" r="2.5"/><circle cx="29" cy="5" r="2.5"/><circle cx="41" cy="5" r="2.5"/><circle cx="53" cy="5" r="2.5"/><circle cx="65" cy="5" r="2.5"/>
+                    <circle cx="5" cy="17" r="2.5"/><circle cx="17" cy="17" r="2.5"/><circle cx="29" cy="17" r="2.5"/><circle cx="41" cy="17" r="2.5"/><circle cx="53" cy="17" r="2.5"/><circle cx="65" cy="17" r="2.5"/>
+                    <circle cx="5" cy="29" r="2.5"/><circle cx="17" cy="29" r="2.5"/><circle cx="29" cy="29" r="2.5"/><circle cx="41" cy="29" r="2.5"/><circle cx="53" cy="29" r="2.5"/><circle cx="65" cy="29" r="2.5"/>
+                    <circle cx="5" cy="41" r="2.5"/><circle cx="17" cy="41" r="2.5"/><circle cx="29" cy="41" r="2.5"/><circle cx="41" cy="41" r="2.5"/><circle cx="53" cy="41" r="2.5"/><circle cx="65" cy="41" r="2.5"/>
+                    <circle cx="5" cy="53" r="2.5"/><circle cx="17" cy="53" r="2.5"/><circle cx="29" cy="53" r="2.5"/><circle cx="41" cy="53" r="2.5"/><circle cx="53" cy="53" r="2.5"/><circle cx="65" cy="53" r="2.5"/>
+                  </svg>
                 </div>
-                <span class="media-badge-label">Eco Bio-Tech Standard</span>
+                <img src="assets/images/service-img-04-880x620.jpg" alt="Our Vision - Eco-Friendly Cleaning" loading="lazy">
+                <div class="why-media-gold-curve" aria-hidden="true">
+                  <svg viewBox="0 0 50 600" preserveAspectRatio="none">
+                    <path d="M 45 0 C 45 140, 44 280, 41 380 C 37 460, 24 530, 8 600 L 50 600 L 50 0 Z" fill="#fba311"/>
+                    <path d="M 45 0 C 45 140, 44 280, 41 380 C 37 460, 24 530, 8 600" stroke="#fba311" stroke-width="4" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="why-floating-guarantee">
+                  <div class="badge-shield-circle">
+                    <i class="fa-solid fa-leaf"></i>
+                  </div>
+                  <div class="badge-content">
+                    <div class="badge-stars">
+                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <strong class="badge-title">Eco Bio-Tech Standard</strong>
+                  </div>
+                </div>
               </div>
             </div>
+
             <div class="why-panel-body">
               <div class="why-panel-kicker">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <i class="fa-solid fa-leaf"></i>
                 <span>FORWARD-THINKING SANITIZATION</span>
               </div>
-              <h3 class="why-panel-title">Setting The Benchmark For Modern Bio-Sanitization</h3>
-              <div class="why-title-accent">
-                <span class="accent-bar"></span>
-                <span class="accent-dot"></span>
+              
+              <h3 class="why-panel-title">
+                Setting The Benchmark For<br>
+                <span class="why-title-accent-wrap">
+                  <span class="why-title-gold-text">Modern Bio-Sanitization</span>
+                  <svg class="why-guarantee-squiggle" viewBox="0 0 150 14" fill="none" aria-hidden="true">
+                    <path d="M 3 8 C 45 2, 95 3, 147 9" stroke="#fba311" stroke-width="3.5" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </h3>
+
+              <div class="why-desc-group">
+                <p class="why-desc-lead">Our vision is to transform modern cleaning standards by integrating smart, hospital-grade biocide technology with green sustainability.</p>
+                <p class="why-desc-sub">We strive to create healthier indoor ecosystems for families and enterprise workspaces, reducing allergens, germs, and environmental footprint across every facility.</p>
               </div>
-              <p class="why-panel-desc">
-                Our vision is to transform modern cleaning standards by integrating smart, hospital-grade biocide technology with green sustainability. We strive to create healthier indoor ecosystems for families and enterprise workspaces, reducing allergens, germs, and environmental footprint across every facility.
-              </p>
-              <div class="why-checklist">
-                <div class="why-check-item">
-                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
-                  <div class="why-check-info">
-                    <strong>Advanced HEPA-Filtration Systems</strong>
-                    <span>Eliminating 99.97% of airborne pathogens and microscopic dust.</span>
+
+              <div class="why-feature-strips">
+                <div class="why-strip-card">
+                  <div class="why-strip-left">
+                    <div class="why-strip-icon-box">
+                      <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <div class="why-strip-info">
+                      <strong class="why-strip-title">Advanced HEPA-Filtration Systems</strong>
+                      <span class="why-strip-sub">Eliminating 99.97% of airborne pathogens and microscopic dust.</span>
+                    </div>
+                  </div>
+                  <div class="why-strip-check">
+                    <i class="fa-solid fa-check"></i>
                   </div>
                 </div>
-                <div class="why-check-item">
-                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
-                  <div class="why-check-info">
-                    <strong>Zero-Residue Bio Formulations</strong>
-                    <span>Promoting natural microbiome health without chemical films.</span>
+
+                <div class="why-strip-card">
+                  <div class="why-strip-left">
+                    <div class="why-strip-icon-box">
+                      <i class="fa-solid fa-flask-vial"></i>
+                    </div>
+                    <div class="why-strip-info">
+                      <strong class="why-strip-title">Zero-Residue Bio Formulations</strong>
+                      <span class="why-strip-sub">Promoting natural microbiome health without chemical films.</span>
+                    </div>
+                  </div>
+                  <div class="why-strip-check">
+                    <i class="fa-solid fa-check"></i>
                   </div>
                 </div>
-                <div class="why-check-item">
-                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
-                  <div class="why-check-info">
-                    <strong>Sustainable Carbon-Neutral Roadmap</strong>
-                    <span>100% green supply chain and eco-certified machinery.</span>
+
+                <div class="why-strip-card">
+                  <div class="why-strip-left">
+                    <div class="why-strip-icon-box">
+                      <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <div class="why-strip-info">
+                      <strong class="why-strip-title">Sustainable Carbon-Neutral Roadmap</strong>
+                      <span class="why-strip-sub">100% green supply chain and eco-certified machinery.</span>
+                    </div>
+                  </div>
+                  <div class="why-strip-check">
+                    <i class="fa-solid fa-check"></i>
                   </div>
                 </div>
               </div>
+
               <div class="why-action-row">
-                <a href="#about" class="why-panel-btn">
+                <a href="#bookingCard" class="why-panel-btn">
                   <span>OUR CLEANING PROMISE</span>
-                  <i class="fa-solid fa-arrow-right"></i>
+                  <span class="why-btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
                 </a>
-                <a href="tel:+1212255511" class="why-phone-hotline">
-                  <span class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></span>
+                <div class="why-action-divider" aria-hidden="true"></div>
+                <a href="tel:+12722525711" class="why-phone-hotline">
+                  <span class="hotline-icon"><i class="fa-solid fa-phone"></i></span>
                   <div class="hotline-text">
-                    <small>Call Us Anytime</small>
-                    <strong>+1 (212) 255-511</strong>
+                    <small>CALL US ANYTIME</small>
+                    <strong>+1 (272) 252-5711</strong>
                   </div>
                 </a>
               </div>
@@ -1125,242 +786,397 @@
         <!-- Panel 3: Our Philosophy -->
         <div class="why-tab-panel" id="panel-philosophy" role="tabpanel" aria-labelledby="tab-philosophy">
           <div class="why-panel-grid">
-            <div class="why-panel-media">
-              <img src="assets/images/service-img-06-880x620.jpg" alt="Our Philosophy - Care and Consistency" loading="lazy">
-              <div class="why-media-badge">
-                <div class="media-badge-stars">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="why-panel-media-wrap">
+              <div class="why-panel-media">
+                <div class="why-media-dots" aria-hidden="true">
+                  <svg viewBox="0 0 76 58" fill="#0c2340">
+                    <circle cx="5" cy="5" r="2.5"/><circle cx="17" cy="5" r="2.5"/><circle cx="29" cy="5" r="2.5"/><circle cx="41" cy="5" r="2.5"/><circle cx="53" cy="5" r="2.5"/><circle cx="65" cy="5" r="2.5"/>
+                    <circle cx="5" cy="17" r="2.5"/><circle cx="17" cy="17" r="2.5"/><circle cx="29" cy="17" r="2.5"/><circle cx="41" cy="17" r="2.5"/><circle cx="53" cy="17" r="2.5"/><circle cx="65" cy="17" r="2.5"/>
+                    <circle cx="5" cy="29" r="2.5"/><circle cx="17" cy="29" r="2.5"/><circle cx="29" cy="29" r="2.5"/><circle cx="41" cy="29" r="2.5"/><circle cx="53" cy="29" r="2.5"/><circle cx="65" cy="29" r="2.5"/>
+                    <circle cx="5" cy="41" r="2.5"/><circle cx="17" cy="41" r="2.5"/><circle cx="29" cy="41" r="2.5"/><circle cx="41" cy="41" r="2.5"/><circle cx="53" cy="41" r="2.5"/><circle cx="65" cy="41" r="2.5"/>
+                    <circle cx="5" cy="53" r="2.5"/><circle cx="17" cy="53" r="2.5"/><circle cx="29" cy="53" r="2.5"/><circle cx="41" cy="53" r="2.5"/><circle cx="53" cy="53" r="2.5"/><circle cx="65" cy="53" r="2.5"/>
+                  </svg>
                 </div>
-                <span class="media-badge-label">Client Care & Trust</span>
+                <img src="assets/images/service-img-02-880x620.jpg" alt="Our Philosophy - Transparent Cleaning" loading="lazy">
+                <div class="why-media-gold-curve" aria-hidden="true">
+                  <svg viewBox="0 0 50 600" preserveAspectRatio="none">
+                    <path d="M 45 0 C 45 140, 44 280, 41 380 C 37 460, 24 530, 8 600 L 50 600 L 50 0 Z" fill="#fba311"/>
+                    <path d="M 45 0 C 45 140, 44 280, 41 380 C 37 460, 24 530, 8 600" stroke="#fba311" stroke-width="4" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="why-floating-guarantee">
+                  <div class="badge-shield-circle">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <div class="badge-content">
+                    <div class="badge-stars">
+                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <strong class="badge-title">Client Care &amp; Trust</strong>
+                  </div>
+                </div>
               </div>
             </div>
+
             <div class="why-panel-body">
               <div class="why-panel-kicker">
                 <i class="fa-solid fa-heart"></i>
-                <span>ETHICAL & HUMAN-CENTERED</span>
+                <span>ETHICAL &amp; HUMAN-CENTERED</span>
               </div>
-              <h3 class="why-panel-title">Care, Consistency, And Absolute Transparency</h3>
-              <div class="why-title-accent">
-                <span class="accent-bar"></span>
-                <span class="accent-dot"></span>
+              
+              <h3 class="why-panel-title">
+                Care, Consistency, And<br>
+                <span class="why-title-accent-wrap">
+                  <span class="why-title-gold-text">Absolute Transparency</span>
+                  <svg class="why-guarantee-squiggle" viewBox="0 0 150 14" fill="none" aria-hidden="true">
+                    <path d="M 3 8 C 45 2, 95 3, 147 9" stroke="#fba311" stroke-width="3.5" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </h3>
+
+              <div class="why-desc-group">
+                <p class="why-desc-lead">At BioCleaning, our philosophy is anchored in deep respect for our clients' spaces and well-being.</p>
+                <p class="why-desc-sub">We believe that true cleanliness creates mental clarity, promotes physical vitality, and inspires confidence across every corner of your home and workplace.</p>
               </div>
-              <p class="why-panel-desc">
-                At BioCleaning, our philosophy is anchored in deep respect for our clients' spaces and well-being. We believe that true cleanliness is not just aesthetic—it creates mental clarity, promotes physical vitality, and inspires confidence across every corner of your home and workplace.
-              </p>
-              <div class="why-checklist">
-                <div class="why-check-item">
-                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
-                  <div class="why-check-info">
-                    <strong>Honest Flat-Rate Pricing</strong>
-                    <span>Completely transparent quotes with zero surprise surcharges.</span>
+
+              <div class="why-feature-strips">
+                <div class="why-strip-card">
+                  <div class="why-strip-left">
+                    <div class="why-strip-icon-box">
+                      <i class="fa-solid fa-tag"></i>
+                    </div>
+                    <div class="why-strip-info">
+                      <strong class="why-strip-title">Honest Flat-Rate Pricing</strong>
+                      <span class="why-strip-sub">Completely transparent quotes with zero surprise surcharges.</span>
+                    </div>
+                  </div>
+                  <div class="why-strip-check">
+                    <i class="fa-solid fa-check"></i>
                   </div>
                 </div>
-                <div class="why-check-item">
-                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
-                  <div class="why-check-info">
-                    <strong>Rigorous 50-Point Inspection</strong>
-                    <span>Systematic quality checks signed off before job completion.</span>
+
+                <div class="why-strip-card">
+                  <div class="why-strip-left">
+                    <div class="why-strip-icon-box">
+                      <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <div class="why-strip-info">
+                      <strong class="why-strip-title">Rigorous 50-Point Inspection</strong>
+                      <span class="why-strip-sub">Systematic quality checks signed off before job completion.</span>
+                    </div>
+                  </div>
+                  <div class="why-strip-check">
+                    <i class="fa-solid fa-check"></i>
                   </div>
                 </div>
-                <div class="why-check-item">
-                  <div class="why-check-icon"><i class="fa-solid fa-check"></i></div>
-                  <div class="why-check-info">
-                    <strong>Genuine Personal Pride</strong>
-                    <span>Treating your sanctuary with utmost respect and meticulous care.</span>
+
+                <div class="why-strip-card">
+                  <div class="why-strip-left">
+                    <div class="why-strip-icon-box">
+                      <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="why-strip-info">
+                      <strong class="why-strip-title">Genuine Personal Pride</strong>
+                      <span class="why-strip-sub">Treating your sanctuary with utmost respect and meticulous care.</span>
+                    </div>
+                  </div>
+                  <div class="why-strip-check">
+                    <i class="fa-solid fa-check"></i>
                   </div>
                 </div>
               </div>
+
               <div class="why-action-row">
-                <a href="#services" class="why-panel-btn">
+                <a href="#bookingCard" class="why-panel-btn">
                   <span>EXPLORE OUR SERVICES</span>
-                  <i class="fa-solid fa-arrow-right"></i>
+                  <span class="why-btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
                 </a>
-                <a href="tel:+1212255511" class="why-phone-hotline">
-                  <span class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></span>
+                <div class="why-action-divider" aria-hidden="true"></div>
+                <a href="tel:+12722525711" class="why-phone-hotline">
+                  <span class="hotline-icon"><i class="fa-solid fa-phone"></i></span>
                   <div class="hotline-text">
-                    <small>Call Us Anytime</small>
-                    <strong>+1 (212) 255-511</strong>
+                    <small>CALL US ANYTIME</small>
+                    <strong>+1 (272) 252-5711</strong>
                   </div>
                 </a>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       OUR WORKING PROCESS (HOW IT WORKS)
+       OUR WORKING PROCESS (HOW IT WORKS - 100% MATCHED TO REFERENCE)
        ========================================================================== -->
   <section id="process" class="working-process-section">
-    <!-- Ambient Background Flourishes -->
-    <div class="process-bg-sparkles" aria-hidden="true">
-      <svg viewBox="0 0 160 160" class="sparkle-svg-1">
-        <path d="M80 0 C80 44 44 80 0 80 C44 80 80 116 80 160 C80 116 116 80 160 80 C116 80 80 44 80 0 Z" fill="rgba(0, 24, 55, 0.035)"/>
+    <!-- Top-Left Ambient Decor (Wave, Sparkles & Ring) -->
+    <div class="process-bg-decor decor-top-left" aria-hidden="true">
+      <svg class="decor-wave-tl" viewBox="0 0 280 220" fill="none">
+        <path d="M 0 0 L 150 0 C 120 80, 70 150, 0 190 Z" fill="#edf4fc"/>
       </svg>
-      <svg viewBox="0 0 100 100" class="sparkle-svg-2">
-        <path d="M50 0 C50 28 28 50 0 50 C28 50 50 72 50 100 C50 72 72 50 100 50 C72 50 50 28 50 0 Z" fill="rgba(251, 163, 17, 0.12)"/>
-      </svg>
-      <div class="process-bg-ring ring-1"></div>
-      <div class="process-bg-ring ring-2"></div>
-      <div class="process-bg-dot dot-1"></div>
+      <span class="decor-sparkle decor-sparkle-lg">✦</span>
+      <span class="decor-sparkle decor-sparkle-sm">✦</span>
+      <span class="decor-ring"></span>
     </div>
 
+    <!-- Top-Right Dot Matrix (6x4 yellow dots) -->
+    <div class="process-bg-decor decor-top-right" aria-hidden="true">
+      <svg viewBox="0 0 76 46" fill="#fba311">
+        <circle cx="5" cy="5" r="2.2"/><circle cx="17" cy="5" r="2.2"/><circle cx="29" cy="5" r="2.2"/><circle cx="41" cy="5" r="2.2"/><circle cx="53" cy="5" r="2.2"/><circle cx="65" cy="5" r="2.2"/>
+        <circle cx="5" cy="17" r="2.2"/><circle cx="17" cy="17" r="2.2"/><circle cx="29" cy="17" r="2.2"/><circle cx="41" cy="17" r="2.2"/><circle cx="53" cy="17" r="2.2"/><circle cx="65" cy="17" r="2.2"/>
+        <circle cx="5" cy="29" r="2.2"/><circle cx="17" cy="29" r="2.2"/><circle cx="29" cy="29" r="2.2"/><circle cx="41" cy="29" r="2.2"/><circle cx="53" cy="29" r="2.2"/><circle cx="65" cy="29" r="2.2"/>
+        <circle cx="5" cy="41" r="2.2"/><circle cx="17" cy="41" r="2.2"/><circle cx="29" cy="41" r="2.2"/><circle cx="41" cy="41" r="2.2"/><circle cx="53" cy="41" r="2.2"/><circle cx="65" cy="41" r="2.2"/>
+      </svg>
+    </div>
+
+    <!-- Bottom-Left Deep Navy Wave with Gold Contour Swoosh -->
+    <div class="process-bg-decor decor-bottom-left" aria-hidden="true">
+      <svg viewBox="0 0 280 180" fill="none">
+        <path d="M 0 180 L 0 50 C 60 50, 110 120, 200 180 Z" fill="#061d3c"/>
+        <path d="M 0 48 C 62 48, 112 118, 202 178" stroke="#fba311" stroke-width="4.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- Bottom-Right Soft Light Wave with Gold Sparkle -->
+    <div class="process-bg-decor decor-bottom-right" aria-hidden="true">
+      <svg viewBox="0 0 240 180" fill="none">
+        <path d="M 240 180 L 100 180 C 130 110, 180 60, 240 30 Z" fill="#edf4fc"/>
+      </svg>
+      <span class="decor-sparkle decor-sparkle-br">✦</span>
+    </div>
 
     <div class="container">
       <!-- Section Header -->
       <div class="process-header text-center">
         <div class="process-sub-badge cc-fade-reveal">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span class="badge-sparkle">✦</span>
           <span>HOW IT WORKS</span>
         </div>
-        <h2 class="process-main-title main-title">Our Working Process</h2>
+        <h2 class="process-main-title cc-fade-reveal">
+          <span class="process-title-dark">Our Working</span> <span class="process-title-gold-wrap"><span class="process-title-gold">Process</span><svg class="process-title-arc" viewBox="0 0 70 8" fill="none" aria-hidden="true"><path d="M 2 2 C 25 7, 45 7, 68 2" stroke="#fba311" stroke-width="3" stroke-linecap="round"/></svg></span>
+        </h2>
       </div>
 
       <!-- Process 3-Step Flow -->
       <div class="process-steps-wrapper">
-        <!-- Connecting Dashed Track -->
+        <!-- Connecting Dashed Yellow Line Track -->
         <div class="process-track-line" aria-hidden="true"></div>
 
-        <div class="process-steps-row">
-          <!-- Step 1 -->
-          <div class="process-step-item">
-            <div class="process-icon-wrap">
-              <div class="process-icon-halo"></div>
-              <div class="process-icon-dashed"></div>
-              <div class="process-icon-inner">
-                <!-- Step 1 SVG Icon: Person with Checklist/Plan -->
-                <svg viewBox="0 0 64 64" class="process-step-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="18" y="10" width="34" height="46" rx="4" stroke-width="2.2"/>
-                  <path d="M26 10V7a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v3" stroke-width="2.2"/>
-                  <circle cx="35" cy="7" r="1.5" fill="currentColor"/>
-                  <path d="M34 22h12" stroke-width="2"/>
-                  <path d="M34 32h12" stroke-width="2"/>
-                  <path d="M34 42h12" stroke-width="2"/>
-                  <path d="M27 22l2 2 4-4" stroke-width="2"/>
-                  <circle cx="16" cy="36" r="5" stroke-width="2.2" fill="#ffffff"/>
-                  <path d="M8 52c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke-width="2.2" fill="#ffffff"/>
+        <div class="process-cards-grid">
+          <!-- Step 1 Card -->
+          <div class="process-card">
+            <!-- Floating Circular Icon on Top -->
+            <div class="process-circle-wrap">
+              <span class="step-num-badge">01</span>
+              <div class="process-circle-inner">
+                <!-- Step 1 Icon: Checklist with Pencil & Gold Sparkle -->
+                <svg class="process-step-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M 44 4 L 45 7 L 48 8 L 45 9 L 44 12 L 43 9 L 40 8 L 43 7 Z" fill="#fba311"/>
+                  <rect x="11" y="9" width="30" height="38" rx="4" stroke="#061d3c" stroke-width="2.6"/>
+                  <rect x="18" y="5" width="16" height="7" rx="2" stroke="#061d3c" stroke-width="2.6" fill="#ffffff"/>
+                  <circle cx="26" cy="8.5" r="1.5" fill="#061d3c"/>
+                  <path d="M 18 20 L 21 23 L 26 17" stroke="#061d3c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="30" y1="20" x2="36" y2="20" stroke="#061d3c" stroke-width="2.4" stroke-linecap="round"/>
+                  <path d="M 18 29 L 21 32 L 26 26" stroke="#061d3c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="30" y1="29" x2="36" y2="29" stroke="#061d3c" stroke-width="2.4" stroke-linecap="round"/>
+                  <path d="M 18 38 L 21 41 L 26 35" stroke="#061d3c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M 32 44 L 42 34 L 45 37 L 35 47 L 31 48 Z" stroke="#061d3c" stroke-width="2.2" fill="#ffffff"/>
                 </svg>
               </div>
-              <span class="step-number-badge">01</span>
             </div>
-            <h3 class="process-step-title">Make A Plan</h3>
-            <p class="process-step-desc">Choose from our specialized cleaning services or customize a tailored plan suited to your space and requirements.</p>
+
+            <!-- Card Content -->
+            <h3 class="process-card-title">Make A Plan</h3>
+            <div class="process-card-bar" aria-hidden="true"></div>
+            <p class="process-card-desc">Choose from our specialized cleaning services or customize a tailored plan suited to your space and requirements.</p>
+
+            <!-- Bottom-Right Signature Navy/Gold Corner Wedge -->
+            <div class="process-card-corner" aria-hidden="true">
+              <svg viewBox="0 0 50 50" preserveAspectRatio="none">
+                <path d="M 50 0 C 50 28, 28 50, 0 50 L 50 50 Z" fill="#061d3c"/>
+                <path d="M 50 0 C 50 28, 28 50, 0 50" stroke="#fba311" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
           </div>
 
-          <!-- Step 2 -->
-          <div class="process-step-item">
-            <div class="process-icon-wrap">
-              <div class="process-icon-halo"></div>
-              <div class="process-icon-dashed"></div>
-              <div class="process-icon-inner">
-                <!-- Step 2 SVG Icon: Calendar Date / Schedule -->
-                <svg viewBox="0 0 64 64" class="process-step-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="12" y="14" width="40" height="40" rx="5" stroke-width="2.2"/>
-                  <path d="M20 8v10M32 8v10M44 8v10" stroke-width="2.5"/>
-                  <line x1="12" y1="24" x2="52" y2="24" stroke-width="2"/>
-                  <circle cx="21" cy="32" r="2" fill="currentColor"/>
-                  <circle cx="32" cy="32" r="2" fill="currentColor"/>
-                  <circle cx="43" cy="32" r="2" fill="currentColor"/>
-                  <circle cx="21" cy="40" r="2" fill="currentColor"/>
-                  <circle cx="32" cy="40" r="2" fill="currentColor"/>
-                  <circle cx="43" cy="40" r="2" fill="currentColor"/>
-                  <circle cx="21" cy="47" r="2" fill="currentColor"/>
-                  <circle cx="32" cy="47" r="2" fill="currentColor"/>
+          <!-- Step 2 Card -->
+          <div class="process-card">
+            <!-- Floating Circular Icon on Top -->
+            <div class="process-circle-wrap">
+              <span class="step-num-badge">02</span>
+              <div class="process-circle-inner">
+                <!-- Step 2 Icon: Calendar with Clock & Gold Sparkle -->
+                <svg class="process-step-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M 44 4 L 45 7 L 48 8 L 45 9 L 44 12 L 43 9 L 40 8 L 43 7 Z" fill="#fba311"/>
+                  <rect x="9" y="10" width="34" height="34" rx="4" stroke="#061d3c" stroke-width="2.6"/>
+                  <line x1="17" y1="6" x2="17" y2="12" stroke="#061d3c" stroke-width="2.6" stroke-linecap="round"/>
+                  <line x1="26" y1="6" x2="26" y2="12" stroke="#061d3c" stroke-width="2.6" stroke-linecap="round"/>
+                  <line x1="35" y1="6" x2="35" y2="12" stroke="#061d3c" stroke-width="2.6" stroke-linecap="round"/>
+                  <line x1="9" y1="18" x2="43" y2="18" stroke="#061d3c" stroke-width="2.2"/>
+                  <circle cx="16" cy="25" r="1.6" fill="#061d3c"/>
+                  <circle cx="23" cy="25" r="1.6" fill="#061d3c"/>
+                  <circle cx="30" cy="25" r="1.6" fill="#061d3c"/>
+                  <circle cx="16" cy="32" r="1.6" fill="#061d3c"/>
+                  <circle cx="23" cy="32" r="1.6" fill="#061d3c"/>
+                  <circle cx="36" cy="37" r="9" stroke="#061d3c" stroke-width="2.6" fill="#ffffff"/>
+                  <polyline points="36,32 36,37 40,37" stroke="#061d3c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <span class="step-number-badge">02</span>
             </div>
-            <h3 class="process-step-title">Set A Date</h3>
-            <p class="process-step-desc">Select your preferred date and time slot with instant scheduling, transparent pricing, and automated reminders.</p>
+
+            <!-- Card Content -->
+            <h3 class="process-card-title">Set A Date</h3>
+            <div class="process-card-bar" aria-hidden="true"></div>
+            <p class="process-card-desc">Select your preferred date and time slot with instant scheduling, transparent pricing, and automated reminders.</p>
+
+            <!-- Bottom-Right Signature Navy/Gold Corner Wedge -->
+            <div class="process-card-corner" aria-hidden="true">
+              <svg viewBox="0 0 50 50" preserveAspectRatio="none">
+                <path d="M 50 0 C 50 28, 28 50, 0 50 L 50 50 Z" fill="#061d3c"/>
+                <path d="M 50 0 C 50 28, 28 50, 0 50" stroke="#fba311" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
           </div>
 
-          <!-- Step 3 -->
-          <div class="process-step-item">
-            <div class="process-icon-wrap">
-              <div class="process-icon-halo"></div>
-              <div class="process-icon-dashed"></div>
-              <div class="process-icon-inner">
-                <!-- Step 3 SVG Icon: Cleaning Tools & Sparkles -->
-                <svg viewBox="0 0 64 64" class="process-step-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="22" y1="10" x2="22" y2="46" stroke-width="2.4"/>
-                  <path d="M14 46h16a2 2 0 0 1 2 2v2H12v-2a2 2 0 0 1 2-2z" stroke-width="2"/>
-                  <line x1="12" y1="50" x2="32" y2="50" stroke-width="2.5"/>
-                  <path d="M34 34h18l-2 18H36l-2-18z" stroke-width="2.2"/>
-                  <path d="M32 34c0-5 5-9 11-9s11 4 11 9" stroke-width="2"/>
-                  <path d="M43 25v-7h-4v7" stroke-width="2"/>
-                  <line x1="39" y1="21" x2="34" y2="23" stroke-width="2"/>
-                  <path d="M12 24l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" fill="currentColor" stroke="none"/>
-                  <path d="M50 14l0.8 2 2 0.8-2 0.8-0.8 2-0.8-2-2-0.8 2-0.8 0.8-2z" fill="currentColor" stroke="none"/>
+          <!-- Step 3 Card -->
+          <div class="process-card">
+            <!-- Floating Circular Icon on Top -->
+            <div class="process-circle-wrap">
+              <span class="step-num-badge">03</span>
+              <div class="process-circle-inner">
+                <!-- Step 3 Icon: Cleaner with Visor Cap & Spray Bottle -->
+                <svg class="process-step-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M 44 4 L 45 7 L 48 8 L 45 9 L 44 12 L 43 9 L 40 8 L 43 7 Z" fill="#fba311"/>
+                  <path d="M 16 17 C 16 11, 26 11, 26 17" stroke="#061d3c" stroke-width="2.6"/>
+                  <path d="M 13 17 C 13 17, 21 16, 29 17 C 31 17, 31 19, 28 19 L 14 19 Z" fill="#061d3c"/>
+                  <path d="M 16 19 C 16 23, 26 23, 26 19" stroke="#061d3c" stroke-width="2.4"/>
+                  <circle cx="21" cy="24" r="5" stroke="#061d3c" stroke-width="2.2"/>
+                  <path d="M 12 43 C 12 33, 16 32, 21 32 C 24 32, 27 33, 28 35" stroke="#061d3c" stroke-width="2.6" stroke-linecap="round"/>
+                  <path d="M 37 25 L 43 25 L 44 28 L 43 30 L 44 32 L 44 43 L 36 43 L 36 32 L 37 30 L 36 28 Z" stroke="#061d3c" stroke-width="2.4" fill="#ffffff"/>
+                  <path d="M 39 25 L 39 20 L 43 20" stroke="#061d3c" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M 36 22 L 34 24" stroke="#061d3c" stroke-width="2.2" stroke-linecap="round"/>
                 </svg>
               </div>
-              <span class="step-number-badge">03</span>
             </div>
-            <h3 class="process-step-title">Start Cleaning</h3>
-            <p class="process-step-desc">Our background-checked, certified professionals arrive fully equipped to deliver an immaculate, sparkling finish.</p>
+
+            <!-- Card Content -->
+            <h3 class="process-card-title">Start Cleaning</h3>
+            <div class="process-card-bar" aria-hidden="true"></div>
+            <p class="process-card-desc">Our background-checked, certified professionals arrive fully equipped to deliver an immaculate, sparkling finish.</p>
+
+            <!-- Bottom-Right Signature Navy/Gold Corner Wedge -->
+            <div class="process-card-corner" aria-hidden="true">
+              <svg viewBox="0 0 50 50" preserveAspectRatio="none">
+                <path d="M 50 0 C 50 28, 28 50, 0 50 L 50 50 Z" fill="#061d3c"/>
+                <path d="M 50 0 C 50 28, 28 50, 0 50" stroke="#fba311" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       ABOUT US (ABOUT CLEANING AGENCY)
+    <!-- ==========================================================================
+       ABOUT US SECTION (100% MATCHED TO REFERENCE DESIGN)
        ========================================================================== -->
   <section id="about" class="about-agency-section">
+    <!-- Ambient Vector Decorations Matching Reference -->
+    <!-- Mid-Left 3x6 Yellow Dot Matrix -->
+    <svg class="about-decor-dots dots-left" width="38" height="92" viewBox="0 0 38 92" fill="none" aria-hidden="true">
+      <circle cx="5" cy="6" r="2.5" fill="#fba311"/>
+      <circle cx="19" cy="6" r="2.5" fill="#fba311"/>
+      <circle cx="33" cy="6" r="2.5" fill="#fba311"/>
+      <circle cx="5" cy="22" r="2.5" fill="#fba311"/>
+      <circle cx="19" cy="22" r="2.5" fill="#fba311"/>
+      <circle cx="33" cy="22" r="2.5" fill="#fba311"/>
+      <circle cx="5" cy="38" r="2.5" fill="#fba311"/>
+      <circle cx="19" cy="38" r="2.5" fill="#fba311"/>
+      <circle cx="33" cy="38" r="2.5" fill="#fba311"/>
+      <circle cx="5" cy="54" r="2.5" fill="#fba311"/>
+      <circle cx="19" cy="54" r="2.5" fill="#fba311"/>
+      <circle cx="33" cy="54" r="2.5" fill="#fba311"/>
+      <circle cx="5" cy="70" r="2.5" fill="#fba311"/>
+      <circle cx="19" cy="70" r="2.5" fill="#fba311"/>
+      <circle cx="33" cy="70" r="2.5" fill="#fba311"/>
+      <circle cx="5" cy="86" r="2.5" fill="#fba311"/>
+      <circle cx="19" cy="86" r="2.5" fill="#fba311"/>
+      <circle cx="33" cy="86" r="2.5" fill="#fba311"/>
+    </svg>
+
+    <!-- Top-Right 6x4 Yellow Dot Matrix -->
+    <svg class="about-decor-dots dots-right" width="88" height="58" viewBox="0 0 88 58" fill="none" aria-hidden="true">
+      <circle cx="6" cy="6" r="2.5" fill="#fba311"/>
+      <circle cx="20" cy="6" r="2.5" fill="#fba311"/>
+      <circle cx="34" cy="6" r="2.5" fill="#fba311"/>
+      <circle cx="48" cy="6" r="2.5" fill="#fba311"/>
+      <circle cx="62" cy="6" r="2.5" fill="#fba311"/>
+      <circle cx="76" cy="6" r="2.5" fill="#fba311"/>
+      <circle cx="6" cy="22" r="2.5" fill="#fba311"/>
+      <circle cx="20" cy="22" r="2.5" fill="#fba311"/>
+      <circle cx="34" cy="22" r="2.5" fill="#fba311"/>
+      <circle cx="48" cy="22" r="2.5" fill="#fba311"/>
+      <circle cx="62" cy="22" r="2.5" fill="#fba311"/>
+      <circle cx="76" cy="22" r="2.5" fill="#fba311"/>
+      <circle cx="6" cy="38" r="2.5" fill="#fba311"/>
+      <circle cx="20" cy="38" r="2.5" fill="#fba311"/>
+      <circle cx="34" cy="38" r="2.5" fill="#fba311"/>
+      <circle cx="48" cy="38" r="2.5" fill="#fba311"/>
+      <circle cx="62" cy="38" r="2.5" fill="#fba311"/>
+      <circle cx="76" cy="38" r="2.5" fill="#fba311"/>
+      <circle cx="6" cy="54" r="2.5" fill="#fba311"/>
+      <circle cx="20" cy="54" r="2.5" fill="#fba311"/>
+      <circle cx="34" cy="54" r="2.5" fill="#fba311"/>
+      <circle cx="48" cy="54" r="2.5" fill="#fba311"/>
+      <circle cx="62" cy="54" r="2.5" fill="#fba311"/>
+      <circle cx="76" cy="54" r="2.5" fill="#fba311"/>
+    </svg>
+
+
+
     <div class="container">
       <div class="about-agency-grid">
         <!-- Left Column: 4-Quadrant Photo & Experience Collage -->
         <div class="about-collage-container">
-          <!-- Ambient Glow behind Collage -->
-          <div class="about-collage-glow" aria-hidden="true"></div>
-
-          <!-- Architectural Border Accent Lines with Golden Joint Dot -->
-          <div class="collage-frame-line vertical-frame" aria-hidden="true"></div>
-          <div class="collage-frame-line horizontal-frame" aria-hidden="true"></div>
-          <div class="collage-joint-dot" aria-hidden="true"></div>
-
           <div class="about-collage-grid">
-            <!-- Tile 1 (Top Left): Cleaning Supplies / Specialist -->
-            <div class="collage-tile tile-top-left">
-              <img src="assets/images/service-img-04-880x620.jpg" alt="Professional Cleaning Supplies" class="collage-img">
-              <div class="collage-tile-overlay"></div>
+            <!-- Left Continuous Frame (Top-Left Cleaner & Bottom-Left Mopping) -->
+            <div class="about-collage-left-frame">
+              <div class="collage-tile tile-tl">
+                <img src="assets/images/service-img-04-880x620.jpg" alt="Professional Cleaner Smiling with Spray Bottle" class="collage-img">
+              </div>
+              <div class="collage-tile tile-bl">
+                <img src="assets/images/service-img-03-880x620.jpg" alt="Floor Sanitation and Mopping" class="collage-img">
+              </div>
             </div>
 
-            <!-- Tile 2 (Top Right): 30+ Years Experience Luxury Card -->
-            <div class="collage-tile tile-experience-card">
-              <div class="experience-card-bar"></div>
-              <div class="experience-card-inner">
-                <div class="experience-mini-badge">
-                  <i class="fa-solid fa-medal"></i>
-                  <span>EST. 1995</span>
+            <!-- Right Column: Experience Card (Top) & Bottom-Right Deep Cleaner Photo -->
+            <div class="about-collage-right-col">
+              <!-- Top Card: 30+ Years Experience Luxury Gold-Bordered Card -->
+              <div class="about-exp-card">
+                <div class="about-exp-top-row">
+                  <svg class="exp-trophy-icon" width="22" height="22" viewBox="0 0 24 24" fill="#fba311"><path d="M19 4h-2V3a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v1H5a3 3 0 0 0-3 3v2a4 4 0 0 0 3.5 3.96A7 7 0 0 0 10 16.83V19H8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2h-2v-2.17a7 7 0 0 0 4.5-2.87A4 4 0 0 0 22 9V7a3 3 0 0 0-3-3zM4 9V7a1 1 0 0 1 1-1h2v4.74A2 2 0 0 1 4 9zm16 0a2 2 0 0 1-3 1.74V6h2a1 1 0 0 1 1 1v2z"/></svg>
+                  <span class="about-est-badge">EST. 1995</span>
                 </div>
-                <div class="experience-card-number">30<span class="exp-plus">+</span></div>
-                <div class="experience-card-label">Years Of Experience</div>
-                <div class="experience-subtext">Certified Excellence</div>
+                <div class="about-exp-number">30<span class="about-exp-plus">+</span></div>
+                <div class="about-exp-label">Years Of Experience</div>
+                <div class="about-exp-cert">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="#fba311"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  <span>Certified Excellence</span>
+                </div>
+              </div>
+
+              <!-- Bottom Card: Crouching Deep Cleaner Specialist Photo -->
+              <div class="collage-tile tile-br">
+                <img src="assets/images/service-img-02-880x620.jpg" alt="Commercial Deep Cleaning Specialist" class="collage-img">
               </div>
             </div>
 
-            <!-- Tile 3 (Bottom Left): Window Cleaner with Squeegee -->
-            <div class="collage-tile tile-bottom-left">
-              <img src="assets/images/service-img-03-880x620.jpg" alt="Window Cleaning Specialist" class="collage-img">
-              <div class="collage-tile-overlay"></div>
-            </div>
-
-            <!-- Tile 4 (Bottom Right): Surface Deep Cleaner -->
-            <div class="collage-tile tile-bottom-right">
-              <img src="assets/images/service-img-02-880x620.jpg" alt="Commercial Deep Cleaning" class="collage-img">
-              <div class="collage-tile-overlay"></div>
-            </div>
-
-            <!-- Center Floating Clinic Badge (Center Intersection with Gold Glow Pulse) -->
-            <div class="about-play-wrapper">
-              <div class="about-play-btn about-clinic-badge" aria-label="Clinical Sanitization Certification" title="Clinical Sanitation Services">
-                <span class="play-pulse-ring"></span>
-                <span class="play-pulse-ring delay-1"></span>
-                <i class="fa-solid fa-house-medical"></i>
-              </div>
+            <!-- Center Intersection Floating Gold-Framed House Badge -->
+            <div class="about-center-badge" aria-label="Eco-Friendly Home & Office Care">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#fba311"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
             </div>
           </div>
         </div>
@@ -1369,14 +1185,19 @@
         <div class="about-agency-content">
           <!-- Subtitle Kicker Pill Badge -->
           <div class="about-agency-kicker cc-fade-reveal">
-            <span class="kicker-pill">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span class="about-kicker-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="#fba311"><path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-6.054-2.685z"/></svg>
               <span>ABOUT CLEANING AGENCY</span>
             </span>
           </div>
 
-          <!-- Main Title (automatically animated with Craft Combine split-reveal) -->
-          <h2 class="about-agency-title main-title">We Are A Highly Experienced Cleaning Service Company</h2>
+          <!-- Main Title with Split-Reveal Animation and Golden Swoosh Underline -->
+          <div class="about-title-wrapper">
+            <h2 class="about-agency-title main-title">We Are A Highly Experienced Cleaning Service Company</h2>
+            <svg class="about-title-swoosh" width="105" height="12" viewBox="0 0 105 12" fill="none" aria-hidden="true">
+              <path d="M2 9.5C28 2 76 2 103 9.5" stroke="#fba311" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
 
           <!-- Introductory Paragraph -->
           <p class="about-agency-lead">
@@ -1388,45 +1209,49 @@
             <!-- Feature Card 1: Commercial Cleaning -->
             <div class="about-feature-card">
               <div class="about-feature-icon-box">
-                <i class="fa-solid fa-building-shield"></i>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#fba311"><path d="M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 7H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V8h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V8h2v2zm0-4h-2V4h2v2zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/></svg>
               </div>
               <div class="about-feature-text">
                 <h4 class="about-feature-title">Commercial Cleaning</h4>
-                <p class="about-feature-desc">Tailored sanitization and scheduled maintenance programs for corporate offices, healthcare facilities, and retail enterprises.</p>
+                <p class="about-feature-desc">Tailored sanitation and scheduled maintenance programs for corporate offices, healthcare facilities, and retail enterprises.</p>
               </div>
               <div class="feature-card-arrow" aria-hidden="true">
-                <i class="fa-solid fa-arrow-right"></i>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#061d3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </div>
             </div>
 
             <!-- Feature Card 2: Residential Cleaning -->
             <div class="about-feature-card">
               <div class="about-feature-icon-box">
-                <i class="fa-solid fa-house-chimney-window"></i>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#fba311"><path d="M12 3L2 12h3v8h5v-6h4v6h5v-8h3L12 3z"/></svg>
               </div>
               <div class="about-feature-text">
                 <h4 class="about-feature-title">Residential Cleaning</h4>
                 <p class="about-feature-desc">Comprehensive deep cleaning, allergen elimination, and domestic upkeep customized to your family's routine.</p>
               </div>
               <div class="feature-card-arrow" aria-hidden="true">
-                <i class="fa-solid fa-arrow-right"></i>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#061d3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </div>
             </div>
           </div>
 
-          <!-- Actions: Signature Pill Button & Hotline Callout -->
+          <!-- Actions: Signature Gold Button & Hotline Callout -->
           <div class="about-agency-actions">
-            <a href="#services" class="btn btn-primary about-action-btn">
-              <span>Read More</span>
-              <span class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <a href="#services" class="about-action-btn">
+              <span>READ MORE</span>
+              <span class="btn-arrow">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#061d3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
             </a>
+
+            <div class="about-action-divider" aria-hidden="true"></div>
 
             <div class="about-hotline-wrap">
               <div class="about-hotline-icon">
-                <i class="fa-solid fa-phone-volume"></i>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fba311"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               </div>
               <div class="about-hotline-info">
-                <span class="hotline-tag">Call Us Anytime</span>
+                <span class="hotline-tag">CALL US ANYTIME</span>
                 <a href="tel:+1212255511" class="hotline-number">+1 (212) 255-511</a>
               </div>
             </div>
@@ -1437,164 +1262,262 @@
   </section>
 
   <!-- ==========================================================================
-       COUNTERS / STATS BANNER
+       COUNTERS / STATS BANNER (Clean Minimalist Design)
        ========================================================================== -->
   <section id="counters" class="counters-section">
     <div class="container">
       <div class="counters-grid">
+        <!-- Item 1: Experienced Cleaners -->
         <div class="counter-item">
-          <div class="counter-icon"><i class="fa-solid fa-users"></i></div>
-          <div class="counter-value" data-target="250" data-suffix="+">250+</div>
-          <div class="counter-title">Experienced Cleaners</div>
-          <p>Professional staff ready to help you anytime.</p>
+          <div class="counter-card-bar"></div>
+          <div class="counter-icon-wrap">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#fba311"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <div class="counter-value" data-target="250" data-suffix="+">
+            <span class="counter-num">250</span><span class="counter-suffix">+</span>
+          </div>
+          <h4 class="counter-title">Experienced Cleaners</h4>
+          <p class="counter-desc">Professional staff ready to help you anytime.</p>
         </div>
 
+        <!-- Item 2: Satisfied Customers -->
         <div class="counter-item">
-          <div class="counter-icon"><i class="fa-solid fa-face-smile"></i></div>
-          <div class="counter-value" data-target="14" data-suffix="m">14m</div>
-          <div class="counter-title">Satisfied Customers</div>
-          <p>Providing solutions for all small & big spaces.</p>
+          <div class="counter-card-bar"></div>
+          <div class="counter-icon-wrap">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#fba311"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+          </div>
+          <div class="counter-value" data-target="14" data-suffix="m">
+            <span class="counter-num">14</span><span class="counter-suffix">m</span>
+          </div>
+          <h4 class="counter-title">Satisfied Customers</h4>
+          <p class="counter-desc">Providing solutions for all small & big spaces.</p>
         </div>
 
+        <!-- Item 3: Cleaned Houses -->
         <div class="counter-item">
-          <div class="counter-icon"><i class="fa-solid fa-house-circle-check"></i></div>
-          <div class="counter-value" data-target="460" data-suffix="+">460+</div>
-          <div class="counter-title">Cleaned Houses</div>
-          <p>Thorough detail clean throughout your house.</p>
+          <div class="counter-card-bar"></div>
+          <div class="counter-icon-wrap">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#fba311"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/></svg>
+          </div>
+          <div class="counter-value" data-target="460" data-suffix="+">
+            <span class="counter-num">460</span><span class="counter-suffix">+</span>
+          </div>
+          <h4 class="counter-title">Cleaned Houses</h4>
+          <p class="counter-desc">Thorough detail clean throughout your house.</p>
         </div>
 
+        <!-- Item 4: Five-Star Reviews -->
         <div class="counter-item">
-          <div class="counter-icon"><i class="fa-solid fa-star"></i></div>
-          <div class="counter-value" data-target="30" data-suffix="k">30k</div>
-          <div class="counter-title">Five-Star Reviews</div>
-          <p>Rated excellent across all platforms.</p>
+          <div class="counter-card-bar"></div>
+          <div class="counter-icon-wrap">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#fba311"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <div class="counter-value" data-target="30" data-suffix="k">
+            <span class="counter-num">30</span><span class="counter-suffix">k</span>
+          </div>
+          <h4 class="counter-title">Five-Star Reviews</h4>
+          <p class="counter-desc">Rated excellent across all platforms.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       OUR SUCCESSFUL PROJECT SHOWCASE SECTION
+       OUR SUCCESSFUL PROJECT (100% MATCHED TO REFERENCE DESIGN)
        ========================================================================== -->
   <section id="projects" class="projects-showcase-section">
     <div class="container">
+      <!-- Section Header -->
       <div class="projects-header-wrap">
         <div class="projects-header-left">
+          <!-- Sub-badge kicker -->
           <div class="projects-sub-badge">
-            <span class="projects-sub-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 2.05c3.61.45 6.48 3.33 6.94 6.95H13V4.05zM4 12c0-4.07 3.06-7.43 7-7.93v15.87c-3.94-.5-7-3.86-7-7.94zm9 7.95V13h6.95c-.46 3.62-3.33 6.5-6.95 6.95z"/>
+            <span class="projects-target-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#061d3c" stroke-width="2.5">
+                <circle cx="12" cy="12" r="8"/>
+                <circle cx="12" cy="12" r="3" fill="#061d3c"/>
               </svg>
             </span>
+            <span class="projects-badge-dash"></span>
             <span class="projects-sub-text">OUR SUCCESSFUL PROJECT</span>
           </div>
-          <h2 class="projects-main-title main-title">Keep your vision to our latest<br>projects.</h2>
+
+          <!-- Main Heading -->
+          <h2 class="projects-main-title main-title">
+            Keep your vision to our <span class="title-highlight">latest</span><br>projects.
+          </h2>
+
+          <!-- Subtitle Paragraph -->
+          <p class="projects-lead">
+            From residential to commercial spaces, we deliver spotless results with professional care and attention to detail.
+          </p>
         </div>
+
+        <!-- Center-Right Handwritten Script Flourish -->
+        <div class="projects-script-flourish" aria-hidden="true">
+          <span class="script-text">Real Spaces</span>
+          <span class="script-text">Real Results</span>
+          <svg class="script-underline" width="90" height="12" viewBox="0 0 90 12" fill="none">
+            <path d="M2 9.5C28 3 65 3 88 9.5" stroke="#fba311" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Right CTA Button with Background Golden Arc -->
         <div class="projects-header-right">
-          <a href="#services" class="btn-projects-cta">
+          <svg class="projects-decor-arc" viewBox="0 0 240 240" fill="none" aria-hidden="true">
+            <path d="M20 0C20 110 90 200 240 200" stroke="#fba311" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+          <a href="#services" class="projects-cta-btn">
             <span>VIEW ALL PROJECTS</span>
-            <span class="cta-arrows">»</span>
+            <span class="cta-arrow-disc">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
           </a>
         </div>
       </div>
-    </div>
 
-    <!-- Modern Spaced 5-Column Project Showcase Grid -->
-    <div class="projects-gallery-strip">
-      <!-- Project 1 -->
-      <div class="project-card-item">
-        <div class="project-img-box">
-          <img src="assets/images/service-img-05-880x620.jpg" alt="Carpet & Floor Care" class="project-img">
+      <!-- 4-Column High-Fidelity Project Gallery Grid -->
+      <div class="projects-gallery-grid">
+        <!-- Project Card 1: Carpet & Floor Cleaning -->
+        <div class="project-card-item">
+          <a href="#services" class="project-card-link" aria-label="Carpet and Floor Cleaning Project Details">
+            <img src="assets/images/project_hd_card1.png" alt="Carpet & Floor Cleaning - Deep cleaning for carpets, tiles, hardwood & all floor types" class="project-card-img" loading="lazy">
+          </a>
         </div>
-        <div class="project-overlay"></div>
-        <span class="project-category-tag">Carpet & Floor</span>
-        <div class="project-hover-card">
-          <div class="project-crosshair" aria-hidden="true"></div>
-          <div class="project-card-actions">
-            <div class="project-reticle" aria-hidden="true">
-              <span class="reticle-dot"></span>
-            </div>
-            <a href="#services" class="project-plus-btn" aria-label="View Project Details">
-              <i class="fa-solid fa-plus"></i>
-            </a>
-          </div>
-          <div class="project-card-info">
-            <h3 class="project-title"><a href="#services">Carpet & Floor Care</a></h3>
-            <span class="project-location">New York, USA</span>
-          </div>
+
+        <!-- Project Card 2: Office Cleaning -->
+        <div class="project-card-item">
+          <a href="#services" class="project-card-link" aria-label="Office Cleaning Project Details">
+            <img src="assets/images/project_hd_card2.png" alt="Office Cleaning - Clean, healthy and productive workspaces for your business" class="project-card-img" loading="lazy">
+          </a>
+        </div>
+
+        <!-- Project Card 3: Sanitization -->
+        <div class="project-card-item">
+          <a href="#services" class="project-card-link" aria-label="Sanitization Project Details">
+            <img src="assets/images/project_hd_card3.png" alt="Sanitization - Safe, hygienic and germ-free spaces for better health" class="project-card-img" loading="lazy">
+          </a>
+        </div>
+
+        <!-- Project Card 4: Residential Cleaning -->
+        <div class="project-card-item">
+          <a href="#services" class="project-card-link" aria-label="Residential Cleaning Project Details">
+            <img src="assets/images/project_hd_card4.png" alt="Residential Cleaning - A spotless home for a healthier, happier you" class="project-card-img" loading="lazy">
+          </a>
         </div>
       </div>
 
-      <!-- Project 2 (Matches reference layout) -->
-      <div class="project-card-item">
-        <div class="project-img-box">
-          <img src="assets/images/service-img-02-880x620.jpg" alt="Office Cleaning" class="project-img">
-        </div>
-        <div class="project-overlay"></div>
-        <span class="project-category-tag">Office Cleaning</span>
-        <div class="project-hover-card">
-          <div class="project-crosshair" aria-hidden="true"></div>
-          <div class="project-card-actions">
-            <div class="project-reticle" aria-hidden="true">
-              <span class="reticle-dot"></span>
-            </div>
-            <a href="#services" class="project-plus-btn" aria-label="View Project Details">
-              <i class="fa-solid fa-plus"></i>
-            </a>
-          </div>
-          <div class="project-card-info">
-            <h3 class="project-title"><a href="#services">Office Cleaning</a></h3>
-            <span class="project-location">Los Angeles, USA</span>
-          </div>
-        </div>
-      </div>
+      <!-- Bottom Trust Badges Strip with Dot Matrices -->
+      <div class="projects-trust-strip">
+        <!-- Left 6x3 Yellow Dot Grid -->
+        <svg class="trust-dots dots-left" width="88" height="44" viewBox="0 0 88 44" fill="none" aria-hidden="true">
+          <circle cx="6" cy="6" r="2.5" fill="#fba311"/>
+          <circle cx="20" cy="6" r="2.5" fill="#fba311"/>
+          <circle cx="34" cy="6" r="2.5" fill="#fba311"/>
+          <circle cx="48" cy="6" r="2.5" fill="#fba311"/>
+          <circle cx="62" cy="6" r="2.5" fill="#fba311"/>
+          <circle cx="76" cy="6" r="2.5" fill="#fba311"/>
+          <circle cx="6" cy="20" r="2.5" fill="#fba311"/>
+          <circle cx="20" cy="20" r="2.5" fill="#fba311"/>
+          <circle cx="34" cy="20" r="2.5" fill="#fba311"/>
+          <circle cx="48" cy="20" r="2.5" fill="#fba311"/>
+          <circle cx="62" cy="20" r="2.5" fill="#fba311"/>
+          <circle cx="76" cy="20" r="2.5" fill="#fba311"/>
+          <circle cx="6" cy="34" r="2.5" fill="#fba311"/>
+          <circle cx="20" cy="34" r="2.5" fill="#fba311"/>
+          <circle cx="34" cy="34" r="2.5" fill="#fba311"/>
+          <circle cx="48" cy="34" r="2.5" fill="#fba311"/>
+          <circle cx="62" cy="34" r="2.5" fill="#fba311"/>
+          <circle cx="76" cy="34" r="2.5" fill="#fba311"/>
+        </svg>
 
-      <!-- Project 3 -->
-      <div class="project-card-item">
-        <div class="project-img-box">
-          <img src="assets/images/service-img-04-880x620.jpg" alt="Commercial Sanitation" class="project-img">
-        </div>
-        <div class="project-overlay"></div>
-        <span class="project-category-tag">Sanitation</span>
-        <div class="project-hover-card">
-          <div class="project-crosshair" aria-hidden="true"></div>
-          <div class="project-card-actions">
-            <div class="project-reticle" aria-hidden="true">
-              <span class="reticle-dot"></span>
+        <!-- Trust Badges List -->
+        <div class="trust-badges-container">
+          <!-- Badge 1: Trusted Professionals -->
+          <div class="trust-badge-item">
+            <div class="trust-badge-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fba311" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
             </div>
-            <a href="#services" class="project-plus-btn" aria-label="View Project Details">
-              <i class="fa-solid fa-plus"></i>
-            </a>
+            <div class="trust-badge-text">
+              <span class="trust-badge-title">Trusted Professionals</span>
+              <p class="trust-badge-desc">Background checked & trained</p>
+            </div>
           </div>
-          <div class="project-card-info">
-            <h3 class="project-title"><a href="#services">Commercial Sanitation</a></h3>
-            <span class="project-location">Chicago, USA</span>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project 4 -->
-      <div class="project-card-item">
-        <div class="project-img-box">
-          <img src="assets/images/service-img-01-880x620.jpg" alt="Residential Deep Clean" class="project-img">
-        </div>
-        <div class="project-overlay"></div>
-        <span class="project-category-tag">Residential</span>
-        <div class="project-hover-card">
-          <div class="project-crosshair" aria-hidden="true"></div>
-          <div class="project-card-actions">
-            <div class="project-reticle" aria-hidden="true">
-              <span class="reticle-dot"></span>
+          <div class="trust-divider" aria-hidden="true"></div>
+
+          <!-- Badge 2: Eco-Friendly Products -->
+          <div class="trust-badge-item">
+            <div class="trust-badge-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fba311" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
             </div>
-            <a href="#services" class="project-plus-btn" aria-label="View Project Details">
-              <i class="fa-solid fa-plus"></i>
-            </a>
+            <div class="trust-badge-text">
+              <span class="trust-badge-title">Eco-Friendly Products</span>
+              <p class="trust-badge-desc">Safe for your family & planet</p>
+            </div>
           </div>
-          <div class="project-card-info">
-            <h3 class="project-title"><a href="#services">Residential Deep Clean</a></h3>
-            <span class="project-location">Houston, USA</span>
+
+          <div class="trust-divider" aria-hidden="true"></div>
+
+          <!-- Badge 3: On-Time Service -->
+          <div class="trust-badge-item">
+            <div class="trust-badge-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fba311" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="trust-badge-text">
+              <span class="trust-badge-title">On-Time Service</span>
+              <p class="trust-badge-desc">Always when you need us</p>
+            </div>
+          </div>
+
+          <div class="trust-divider" aria-hidden="true"></div>
+
+          <!-- Badge 4: 100% Satisfaction -->
+          <div class="trust-badge-item">
+            <div class="trust-badge-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fba311" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <div class="trust-badge-text">
+              <span class="trust-badge-title">100% Satisfaction</span>
+              <p class="trust-badge-desc">Your happiness is our priority</p>
+            </div>
           </div>
         </div>
+
+        <!-- Right 6x3 Yellow Dot Grid -->
+        <svg class="trust-dots dots-right" width="88" height="44" viewBox="0 0 88 44" fill="none" aria-hidden="true">
+          <circle cx="6" cy="6" r="2.5" fill="#fba311"/>
+          <circle cx="20" cy="6" r="2.5" fill="#fba311"/>
+          <circle cx="34" cy="6" r="2.5" fill="#fba311"/>
+          <circle cx="48" cy="6" r="2.5" fill="#fba311"/>
+          <circle cx="62" cy="6" r="2.5" fill="#fba311"/>
+          <circle cx="76" cy="6" r="2.5" fill="#fba311"/>
+          <circle cx="6" cy="20" r="2.5" fill="#fba311"/>
+          <circle cx="20" cy="20" r="2.5" fill="#fba311"/>
+          <circle cx="34" cy="20" r="2.5" fill="#fba311"/>
+          <circle cx="48" cy="20" r="2.5" fill="#fba311"/>
+          <circle cx="62" cy="20" r="2.5" fill="#fba311"/>
+          <circle cx="76" cy="20" r="2.5" fill="#fba311"/>
+          <circle cx="6" cy="34" r="2.5" fill="#fba311"/>
+          <circle cx="20" cy="34" r="2.5" fill="#fba311"/>
+          <circle cx="34" cy="34" r="2.5" fill="#fba311"/>
+          <circle cx="48" cy="34" r="2.5" fill="#fba311"/>
+          <circle cx="62" cy="34" r="2.5" fill="#fba311"/>
+          <circle cx="76" cy="34" r="2.5" fill="#fba311"/>
+        </svg>
       </div>
     </div>
   </section>
@@ -1994,6 +1917,6 @@
   </a>
 
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=6.8"></script>
 </body>
 </html>
