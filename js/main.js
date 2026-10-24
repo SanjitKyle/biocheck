@@ -511,38 +511,79 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 11. Why Choose Us Interactive Tabs (Mission / Vision / Philosophy)
+  // 11. Why Choose Us Interactive Tabs (Mission / Vision / Philosophy) - Auto-Cycling Tabs
   const whyTabs = document.querySelectorAll('.why-tab-btn');
   const whyPanels = document.querySelectorAll('.why-tab-panel');
+  const whyTabsNav = document.querySelector('.why-tabs-nav');
+  const whySection = document.getElementById('why');
 
   if (whyTabs.length > 0 && whyPanels.length > 0) {
-    whyTabs.forEach(tab => {
+    let currentTabIndex = 0;
+    let autoTabTimer = null;
+    const AUTO_INTERVAL = 4500; // Switch tab every 4.5 seconds
+
+    function activateTab(index) {
+      currentTabIndex = index;
+      const activeTab = whyTabs[currentTabIndex];
+      const targetId = activeTab.getAttribute('data-tab');
+      if (!targetId) return;
+
+      // Deactivate all tabs & update ARIA
+      whyTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+
+      // Hide all panels
+      whyPanels.forEach(p => {
+        p.classList.remove('active');
+      });
+
+      // Activate target tab
+      activeTab.classList.add('active');
+      activeTab.setAttribute('aria-selected', 'true');
+
+      // Reveal corresponding panel
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    }
+
+    function startAutoTab() {
+      stopAutoTab();
+      autoTabTimer = setInterval(() => {
+        const nextIndex = (currentTabIndex + 1) % whyTabs.length;
+        activateTab(nextIndex);
+      }, AUTO_INTERVAL);
+    }
+
+    function stopAutoTab() {
+      if (autoTabTimer) {
+        clearInterval(autoTabTimer);
+        autoTabTimer = null;
+      }
+    }
+
+    // Attach click listeners to manual tab buttons
+    whyTabs.forEach((tab, index) => {
       tab.addEventListener('click', () => {
-        const targetId = tab.getAttribute('data-tab');
-        if (!targetId) return;
-
-        // Deactivate all tabs & update ARIA
-        whyTabs.forEach(t => {
-          t.classList.remove('active');
-          t.setAttribute('aria-selected', 'false');
-        });
-
-        // Hide all panels
-        whyPanels.forEach(p => {
-          p.classList.remove('active');
-        });
-
-        // Activate clicked tab
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-
-        // Reveal corresponding panel
-        const targetPanel = document.getElementById(targetId);
-        if (targetPanel) {
-          targetPanel.classList.add('active');
-        }
+        activateTab(index);
+        // Reset timer on user manual interaction
+        startAutoTab();
       });
     });
+
+    // Pause auto-rotation when user hovers over tabs or panels, resume on mouse leave
+    const pauseContainers = [whyTabsNav, document.querySelector('.why-tab-panels-wrapper')].filter(Boolean);
+    pauseContainers.forEach(container => {
+      container.addEventListener('mouseenter', stopAutoTab);
+      container.addEventListener('mouseleave', startAutoTab);
+      container.addEventListener('touchstart', stopAutoTab, { passive: true });
+    });
+
+    // Start auto tab rotation
+    startAutoTab();
   }
 });
 
