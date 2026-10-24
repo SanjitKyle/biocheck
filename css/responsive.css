@@ -345,6 +345,10 @@
   .testimonials-slider-track {
     gap: 20px;
   }
+  .testi-main-title {
+    font-size: 2.15rem;
+    white-space: normal;
+  }
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -589,5 +593,16 @@
   .trust-badges-container {
     grid-template-columns: 1fr;
     gap: 18px;
+  }
+
+  /* Testimonials 768px */
+  .testi-main-title {
+    font-size: 1.85rem;
+  }
+  .testimonial-card {
+    padding: 28px 22px 24px 24px;
+  }
+  .testi-badge-line {
+    width: 40px;
   }
 }
