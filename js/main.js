@@ -520,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (whyTabs.length > 0 && whyPanels.length > 0) {
     let currentTabIndex = 0;
     let autoTabTimer = null;
-    const AUTO_INTERVAL = 4500; // Switch tab every 4.5 seconds
+    const AUTO_INTERVAL = 3000; // Auto click / switch to next tab every 3 seconds in continuous loop
 
     function activateTab(index) {
       currentTabIndex = index;
