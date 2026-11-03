@@ -511,6 +511,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      const subject = `Cleaning enquiry from ${formData.get('name')}`;
+      const body = [
+        `Name: ${formData.get('name')}`,
+        `Email: ${formData.get('email')}`,
+        `Phone: ${formData.get('phone') || 'Not provided'}`,
+        `Service: ${formData.get('service') || 'Not specified'}`,
+        '',
+        'How can we help?',
+        formData.get('message')
+      ].join('\n');
+      const mailto = `mailto:hello@dublcheckcleaningglasgow.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const status = document.getElementById('contactFormStatus');
+
+      if (status) {
+        status.textContent = 'Your email app should open with your enquiry. Please send the email to complete your request.';
+        status.classList.add('is-visible');
+      }
+
+      window.location.href = mailto;
+    });
+  }
+
+  const galleryFilters = document.querySelectorAll('[data-gallery-filter]');
+  const galleryItems = document.querySelectorAll('[data-gallery-category]');
+
+  if (galleryFilters.length > 0 && galleryItems.length > 0) {
+    galleryFilters.forEach((button) => {
+      button.addEventListener('click', () => {
+        const selectedCategory = button.getAttribute('data-gallery-filter');
+
+        galleryFilters.forEach((filterButton) => {
+          const isActive = filterButton === button;
+          filterButton.classList.toggle('is-active', isActive);
+          filterButton.setAttribute('aria-pressed', String(isActive));
+        });
+
+        galleryItems.forEach((item) => {
+          const matchesCategory = selectedCategory === 'all' ||
+            item.getAttribute('data-gallery-category') === selectedCategory;
+          item.hidden = !matchesCategory;
+        });
+      });
+    });
+  }
+
   // 11. Why Choose Us Interactive Tabs (Mission / Vision / Philosophy) - Auto-Cycling Tabs
   const whyTabs = document.querySelectorAll('.why-tab-btn');
   const whyPanels = document.querySelectorAll('.why-tab-panel');
@@ -586,4 +636,3 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoTab();
   }
 });
-
